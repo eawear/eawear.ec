@@ -568,7 +568,24 @@ footer {
   .llamada h2 {
     font-size: 57px;
   }
+.precio {
+  margin: 14px 0 0;
+  color: var(--negro);
+  font-family: "Anton", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
 
+.precio::before {
+  content: "PRECIO ";
+  margin-right: 7px;
+  color: var(--rojo);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
   .llamada {
     padding: 85px 20px;
   }
