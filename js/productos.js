@@ -1,44 +1,45 @@
-// Número de WhatsApp con código de Ecuador
 const telefono = "593996866885";
 
-// Información de las cinco camisas
 const productos = [
   {
     nombre: "West Indies",
     color: "Blanco / Verde",
     tipo: "Tropical drop",
+    precio: "22,99",
     imagen: "img/west-indies.png"
   },
   {
     nombre: "All For This Glory",
     color: "Vino tinto",
     tipo: "Statement tee",
+    precio: "22,99",
     imagen: "img/glory.png"
   },
   {
     nombre: "Love Love Flakk",
     color: "Chocolate",
     tipo: "Street sketch",
+    precio: "22,99",
     imagen: "img/flakk.png"
   },
   {
     nombre: "Dark Spirit",
     color: "Negro",
     tipo: "Night edition",
+    precio: "22,99",
     imagen: "img/dark-spirit.png"
   },
   {
     nombre: "Kaisen",
     color: "Blanco / Negro",
     tipo: "Japan series",
+    precio: "22,99",
     imagen: "img/kaisen.png"
   }
 ];
 
-// Contenedor donde aparecerán los productos
 const lista = document.getElementById("listaProductos");
 
-// Generar cada tarjeta de producto
 productos.forEach((producto, indice) => {
   const tarjeta = document.createElement("article");
 
@@ -60,19 +61,21 @@ productos.forEach((producto, indice) => {
 
     <div class="datos">
 
-      <div>
+      <div class="informacion-producto">
 
         <span class="tipo">
           ${producto.tipo}
         </span>
 
-        <h3>
-          ${producto.nombre}
-        </h3>
+        <h3>${producto.nombre}</h3>
 
         <span class="color">
           ${producto.color} · Corte oversize
         </span>
+
+        <p class="precio">
+          $${producto.precio}
+        </p>
 
       </div>
 
@@ -99,10 +102,7 @@ productos.forEach((producto, indice) => {
     </div>
   `;
 
-  // Selector de talla
   const selector = tarjeta.querySelector("select");
-
-  // Botón de compra
   const botonComprar = tarjeta.querySelector(".comprar");
 
   botonComprar.addEventListener("click", () => {
@@ -110,7 +110,8 @@ productos.forEach((producto, indice) => {
 
     const mensaje =
       `Hola EAWEAR.EC, quiero comprar la camisa oversize ` +
-      `${producto.nombre} en talla ${talla}. ¿Está disponible?`;
+      `${producto.nombre}, talla ${talla}, por $${producto.precio}. ` +
+      `¿Está disponible?`;
 
     const enlaceWhatsApp =
       `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
