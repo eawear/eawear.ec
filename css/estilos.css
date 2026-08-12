@@ -1,5 +1,5 @@
 /* ==========================================
-   PALETA OFICIAL EAWEAR.EC
+   PALETA EAWEAR.EC
 ========================================== */
 
 :root {
@@ -7,16 +7,16 @@
   --rojo-oscuro: #a41117;
   --negro: #111111;
   --negro-suave: #1c1c1c;
-  --beige: #f1e9dd;
-  --beige-claro: #f7f2ea;
-  --hueso: #fff9f0;
   --blanco: #ffffff;
-  --gris: #716b64;
-  --gris-claro: #d8d0c5;
+  --gris: #686868;
+  --gris-claro: #ececec;
+  --esmeralda: #064e3b;
+  --whatsapp: #25d366;
+  --whatsapp-oscuro: #159947;
 }
 
 /* ==========================================
-   CONFIGURACIÓN GENERAL
+   GENERAL
 ========================================== */
 
 * {
@@ -30,7 +30,7 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
-  background: var(--beige-claro);
+  background: var(--blanco);
   color: var(--negro);
   font-family: "Inter", Arial, sans-serif;
 }
@@ -51,7 +51,7 @@ select {
 }
 
 /* ==========================================
-   MENÚ PRINCIPAL
+   MENÚ
 ========================================== */
 
 .menu {
@@ -62,8 +62,8 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--hueso);
-  box-shadow: 0 1px 0 rgba(17, 17, 17, 0.1);
+  background: var(--blanco);
+  box-shadow: 0 1px 0 var(--gris-claro);
 }
 
 .marca {
@@ -128,7 +128,7 @@ select {
 }
 
 /* ==========================================
-   BOTONES
+   BOTONES GENERALES
 ========================================== */
 
 .boton {
@@ -141,7 +141,6 @@ select {
   text-transform: uppercase;
   transition:
     background 0.25s ease,
-    color 0.25s ease,
     transform 0.25s ease;
 }
 
@@ -149,20 +148,27 @@ select {
   transform: translateY(-3px);
 }
 
-.boton-menu,
+.boton-menu {
+  background: var(--whatsapp);
+  color: var(--blanco);
+}
+
+.boton-menu:hover {
+  background: var(--whatsapp-oscuro);
+}
+
 .boton-rojo {
   background: var(--rojo);
   color: var(--blanco);
 }
 
-.boton-menu:hover,
 .boton-rojo:hover {
   background: var(--rojo-oscuro);
 }
 
 .boton-negro {
   background: var(--negro);
-  color: var(--hueso);
+  color: var(--blanco);
 }
 
 .boton-negro:hover {
@@ -180,7 +186,7 @@ select {
   grid-template-columns: 1fr 0.95fr;
   align-items: center;
   overflow: hidden;
-  background: var(--beige-claro);
+  background: var(--blanco);
 }
 
 .texto-portada {
@@ -197,14 +203,13 @@ select {
 .etiqueta-portada span,
 .etiqueta-portada strong {
   padding: 8px 12px;
-  border: none;
   font-size: 9px;
   font-weight: 900;
   letter-spacing: 0.12em;
 }
 
 .etiqueta-portada span {
-  background: var(--hueso);
+  background: #f5f5f5;
   color: var(--negro);
 }
 
@@ -224,8 +229,6 @@ select {
 
 .portada h1 span {
   color: var(--rojo);
-  text-shadow: none;
-  -webkit-text-stroke: 0;
 }
 
 .descripcion-portada {
@@ -264,7 +267,7 @@ select {
 }
 
 .datos-portada strong {
-  color: var(--rojo);
+  color: var(--negro);
   font-family: "Anton", sans-serif;
   font-size: 30px;
   font-weight: 400;
@@ -290,13 +293,12 @@ select {
   justify-content: center;
 }
 
-.forma-esmeralda {
+.forma-negra {
   position: absolute;
   top: 6%;
   right: 0;
   width: 68%;
   height: 78%;
-  border: none;
   background: var(--negro);
   transform: rotate(8deg);
 }
@@ -307,7 +309,6 @@ select {
   left: 5%;
   width: 70%;
   height: 72%;
-  border: none;
   background: var(--rojo);
   transform: rotate(-7deg);
 }
@@ -317,8 +318,7 @@ select {
   z-index: 2;
   width: 120%;
   max-width: 760px;
-  border: none;
-  box-shadow: 0 25px 50px rgba(17, 17, 17, 0.28);
+  box-shadow: 0 25px 50px rgba(17, 17, 17, 0.25);
   transform: rotate(-2deg);
 }
 
@@ -329,7 +329,7 @@ select {
   left: -8%;
   padding: 10px 13px;
   background: var(--negro);
-  color: var(--hueso);
+  color: var(--blanco);
   font-size: 9px;
   font-weight: 900;
   letter-spacing: 0.2em;
@@ -347,7 +347,6 @@ select {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: none;
   border-radius: 50%;
   background: var(--rojo);
   color: var(--blanco);
@@ -368,13 +367,12 @@ select {
 }
 
 .sticker small {
-  color: var(--hueso);
   font-size: 7px;
   font-weight: 900;
 }
 
 /* ==========================================
-   FRANJA EXTENSA EN MOVIMIENTO
+   FRANJA ANIMADA
 ========================================== */
 
 .franja {
@@ -384,9 +382,10 @@ select {
   display: flex;
   align-items: center;
   overflow: hidden;
-  border: none;
-  background: var(--rojo);
-  color: var(--blanco);
+  background: var(--blanco);
+  box-shadow:
+    0 -1px 0 var(--gris-claro),
+    0 1px 0 var(--gris-claro);
 }
 
 .franja-contenido {
@@ -406,6 +405,7 @@ select {
 }
 
 .grupo-franja span {
+  color: var(--esmeralda);
   font-family: "Anton", sans-serif;
   font-size: 29px;
   font-weight: 400;
@@ -413,8 +413,8 @@ select {
 }
 
 .grupo-franja b {
-  color: var(--hueso);
-  font-size: 24px;
+  color: var(--rojo);
+  font-size: 23px;
 }
 
 .franja:hover .franja-contenido {
@@ -439,7 +439,7 @@ select {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   background: var(--negro);
-  color: var(--hueso);
+  color: var(--blanco);
 }
 
 .beneficios article {
@@ -448,7 +448,6 @@ select {
   display: flex;
   align-items: center;
   gap: 20px;
-  border: none;
 }
 
 .beneficios article > span {
@@ -465,7 +464,7 @@ select {
 
 .beneficios p {
   margin: 0;
-  color: #999999;
+  color: #a0a0a0;
   font-size: 11px;
   line-height: 1.6;
 }
@@ -476,7 +475,7 @@ select {
 
 .coleccion {
   padding: 110px 5%;
-  background: var(--beige-claro);
+  background: var(--blanco);
 }
 
 .encabezado-coleccion {
@@ -528,7 +527,7 @@ select {
   margin-top: 13px;
   padding: 8px 11px;
   background: var(--negro);
-  color: var(--hueso);
+  color: var(--blanco);
   font-size: 9px;
   font-weight: 900;
   letter-spacing: 0.1em;
@@ -547,9 +546,7 @@ select {
 .producto {
   position: relative;
   overflow: hidden;
-  border: none;
-  border-radius: 4px;
-  background: var(--hueso);
+  background: var(--blanco);
   box-shadow: 0 12px 35px rgba(17, 17, 17, 0.1);
   transition:
     transform 0.3s ease,
@@ -565,15 +562,10 @@ select {
   grid-column: 1 / -1;
 }
 
-/* ==========================================
-   FOTOGRAFÍA DEL PRODUCTO
-========================================== */
-
 .foto {
   position: relative;
   overflow: hidden;
-  border: none;
-  background: var(--beige);
+  background: #f0f0f0;
 }
 
 .foto img {
@@ -597,7 +589,6 @@ select {
   padding: 0 8px;
   display: grid;
   place-items: center;
-  border: none;
   background: var(--rojo);
   color: var(--blanco);
   font-family: "Anton", sans-serif;
@@ -625,7 +616,7 @@ select {
   display: inline-block;
   padding: 6px 9px;
   background: var(--negro);
-  color: var(--hueso);
+  color: var(--blanco);
   font-size: 8px;
   font-weight: 900;
   letter-spacing: 0.14em;
@@ -647,13 +638,11 @@ select {
   font-weight: 700;
 }
 
-/* ==========================================
-   PRECIO
-========================================== */
+/* PRECIO NEGRO */
 
 .precio {
   margin: 16px 0 0;
-  color: var(--rojo);
+  color: var(--negro);
   font-family: "Anton", sans-serif;
   font-size: 35px;
   font-weight: 400;
@@ -661,7 +650,7 @@ select {
 
 .precio::before {
   margin-right: 8px;
-  color: var(--negro);
+  color: var(--rojo);
   font-family: "Inter", Arial, sans-serif;
   font-size: 8px;
   font-weight: 900;
@@ -670,21 +659,14 @@ select {
   content: "PRECIO";
 }
 
-/* ==========================================
-   MENSAJE MOTIVADOR
-========================================== */
+/* MENSAJE SIN RAYA NI COMILLAS */
 
 .significado {
-  position: relative;
   max-width: 530px;
   margin-top: 18px;
   padding: 17px 19px;
-  border: none;
-  border-left: 3px solid var(--rojo);
-  background: var(--beige-claro);
+  background: #f7f7f7;
 }
-
-/* Elimina completamente las comillas */
 
 .significado::before {
   display: none;
@@ -693,14 +675,14 @@ select {
 
 .significado p {
   margin: 0;
-  color: #5d5953;
+  color: #565656;
   font-size: 12px;
   font-weight: 600;
   line-height: 1.7;
 }
 
 /* ==========================================
-   TALLA Y BOTÓN DE COMPRA
+   TALLAS Y COMPRA
 ========================================== */
 
 .compra {
@@ -723,8 +705,7 @@ select {
   height: 48px;
   margin-top: 6px;
   padding: 0 14px;
-  border: 1px solid var(--gris-claro);
-  border-radius: 0;
+  border: 1px solid #dddddd;
   background: var(--blanco);
   color: var(--negro);
   font-weight: 900;
@@ -736,11 +717,13 @@ select {
   outline-offset: 2px;
 }
 
+/* BOTÓN PEDIR POR WHATSAPP VERDE */
+
 .comprar {
   min-height: 50px;
   padding: 12px 17px;
   border: none;
-  background: var(--rojo);
+  background: var(--whatsapp);
   color: var(--blanco);
   font-size: 9px;
   font-weight: 900;
@@ -753,12 +736,12 @@ select {
 }
 
 .comprar:hover {
-  background: var(--rojo-oscuro);
+  background: var(--whatsapp-oscuro);
   transform: translateY(-3px);
 }
 
 /* ==========================================
-   GUÍA DE TALLAS
+   TALLAS
 ========================================== */
 
 .tallas {
@@ -771,8 +754,8 @@ select {
   color: var(--blanco);
 }
 
-.sobre-titulo.hueso {
-  color: var(--hueso);
+.sobre-titulo.claro {
+  color: var(--blanco);
 }
 
 .tallas h2 {
@@ -781,23 +764,21 @@ select {
 
 .tallas > div:first-child > p:last-child {
   max-width: 550px;
-  color: #f5d8d9;
+  color: #f4d8d9;
   line-height: 1.7;
 }
 
 .lista-tallas {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3px;
-  background: rgba(255, 255, 255, 0.25);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
 }
 
 .lista-tallas span {
   min-height: 130px;
   display: grid;
   place-items: center;
-  border: none;
-  background: var(--hueso);
+  background: var(--blanco);
   color: var(--negro);
   font-family: "Anton", sans-serif;
   font-size: 55px;
@@ -808,11 +789,11 @@ select {
 
 .lista-tallas span:hover {
   background: var(--negro);
-  color: var(--hueso);
+  color: var(--blanco);
 }
 
 /* ==========================================
-   NUESTRA ESENCIA
+   NOSOTROS
 ========================================== */
 
 .nosotros {
@@ -824,17 +805,16 @@ select {
   align-items: center;
   overflow: hidden;
   background: var(--negro);
-  color: var(--hueso);
+  color: var(--blanco);
 }
 
 .numero-grande {
-  color: var(--hueso);
+  color: var(--blanco);
   font-family: "Anton", sans-serif;
   font-size: clamp(230px, 32vw, 520px);
   line-height: 0.7;
-  opacity: 0.08;
+  opacity: 0.06;
   transform: rotate(-8deg);
-  -webkit-text-stroke: 0;
 }
 
 .contenido-nosotros {
@@ -862,7 +842,7 @@ select {
   margin-top: 25px;
   padding-bottom: 8px;
   border-bottom: 2px solid var(--rojo);
-  color: var(--hueso);
+  color: var(--blanco);
   font-size: 10px;
   font-weight: 900;
   letter-spacing: 0.1em;
@@ -874,7 +854,7 @@ select {
 
 .llamada-final {
   padding: 120px 20px;
-  background: var(--hueso);
+  background: var(--blanco);
   color: var(--negro);
   text-align: center;
 }
@@ -901,7 +881,6 @@ select {
 
 .llamada-final h2 span {
   color: var(--rojo);
-  -webkit-text-stroke: 0;
 }
 
 /* ==========================================
@@ -923,7 +902,7 @@ footer {
 }
 
 .marca-footer {
-  color: var(--hueso);
+  color: var(--blanco);
 }
 
 .marca-footer img {
@@ -943,9 +922,8 @@ footer {
   height: 62px;
   display: grid;
   place-items: center;
-  border: none;
   border-radius: 50%;
-  background: var(--rojo);
+  background: var(--whatsapp);
   color: var(--blanco);
   font-size: 13px;
   font-weight: 900;
@@ -956,7 +934,7 @@ footer {
 }
 
 .whatsapp-flotante:hover {
-  background: var(--negro);
+  background: var(--whatsapp-oscuro);
   transform: translateY(-4px);
 }
 
@@ -989,10 +967,6 @@ footer {
 
   .beneficios {
     grid-template-columns: 1fr;
-  }
-
-  .beneficios article {
-    min-height: auto;
   }
 
   .encabezado-coleccion {
@@ -1047,7 +1021,7 @@ footer {
 @media (max-width: 560px) {
   .menu {
     height: 72px;
-    padding: 0 17px;
+    padding: 0 16px;
   }
 
   .marca {
@@ -1055,8 +1029,8 @@ footer {
   }
 
   .marca img {
-    width: 41px;
-    height: 33px;
+    width: 42px;
+    height: 34px;
   }
 
   .marca strong {
@@ -1068,22 +1042,29 @@ footer {
   }
 
   .boton-menu {
-    padding: 11px 8px;
+    padding: 11px 9px;
     font-size: 8px;
   }
 
   .portada {
     min-height: auto;
     padding: 55px 18px 45px;
+    grid-template-columns: 1fr;
   }
 
   .etiqueta-portada {
-    align-items: start;
-    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .etiqueta-portada span,
+  .etiqueta-portada strong {
+    padding: 7px 9px;
+    font-size: 7px;
   }
 
   .portada h1 {
-    font-size: 70px;
+    margin: 27px 0 22px;
+    font-size: clamp(63px, 20vw, 78px);
   }
 
   .descripcion-portada {
@@ -1093,35 +1074,66 @@ footer {
   .acciones-portada {
     align-items: start;
     flex-direction: column;
+    gap: 18px;
   }
 
   .datos-portada {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
+    margin-top: 37px;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .datos-portada > div {
+    gap: 5px;
+  }
+
+  .datos-portada strong {
+    font-size: 22px;
+  }
+
+  .datos-portada span {
+    font-size: 5px;
   }
 
   .imagen-portada {
-    height: 320px;
+    width: 100%;
+    height: 350px;
+    margin-top: 35px;
   }
 
-  .forma-esmeralda,
-  .forma-roja {
+  .forma-negra {
+    top: 9%;
+    right: 4%;
+    width: 70%;
     height: 75%;
   }
 
-  .sticker {
-    right: 0;
-    width: 90px;
-    height: 90px;
+  .forma-roja {
+    bottom: 4%;
+    left: 3%;
+    width: 72%;
+    height: 70%;
   }
 
-  .sticker strong {
-    font-size: 20px;
+  .imagen-portada img {
+    width: 108%;
+    max-width: none;
   }
 
   .texto-vertical {
     display: none;
+  }
+
+  .sticker {
+    right: 0;
+    bottom: 0;
+    width: 92px;
+    height: 92px;
+  }
+
+  .sticker strong {
+    font-size: 20px;
   }
 
   .franja {
@@ -1145,43 +1157,56 @@ footer {
     font-size: 18px;
   }
 
+  .beneficios {
+    grid-template-columns: 1fr;
+  }
+
+  .beneficios article {
+    min-height: 110px;
+    padding: 27px 22px;
+  }
+
   .coleccion {
     padding: 80px 18px;
   }
 
   .encabezado-coleccion h2 {
-    font-size: 63px;
+    font-size: 62px;
   }
 
   .productos {
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 
   .foto img {
-    aspect-ratio: 1.35 / 1;
+    aspect-ratio: 1.45 / 1;
   }
 
   .numero {
-    top: 12px;
-    left: 12px;
-    min-width: 41px;
-    height: 41px;
+    top: 13px;
+    left: 13px;
+    min-width: 42px;
+    height: 42px;
   }
 
   .datos {
-    padding: 20px;
+    padding: 22px;
+    align-items: stretch;
+    flex-direction: column;
   }
 
   .datos h3 {
-    font-size: 31px;
+    font-size: 33px;
   }
 
   .precio {
-    font-size: 31px;
+    font-size: 32px;
   }
 
   .significado {
-    padding: 16px;
+    width: 100%;
+    padding: 16px 17px;
   }
 
   .significado p {
@@ -1189,16 +1214,27 @@ footer {
   }
 
   .compra {
+    width: 100%;
     min-width: 100%;
+  }
+
+  .compra select,
+  .comprar {
+    width: 100%;
   }
 
   .tallas {
     padding: 80px 18px;
+    grid-template-columns: 1fr;
     gap: 45px;
   }
 
   .tallas h2 {
-    font-size: 67px;
+    font-size: 68px;
+  }
+
+  .lista-tallas {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .lista-tallas span {
@@ -1209,6 +1245,14 @@ footer {
   .nosotros {
     min-height: 680px;
     padding: 90px 18px;
+    grid-template-columns: 1fr;
+  }
+
+  .numero-grande {
+    position: absolute;
+    top: 75px;
+    right: -20px;
+    font-size: 280px;
   }
 
   .contenido-nosotros h2 {
@@ -1224,7 +1268,13 @@ footer {
   }
 
   .llamada-final h2 {
-    font-size: 61px;
+    font-size: 60px;
+  }
+
+  footer {
+    padding: 38px 20px;
+    flex-direction: column;
+    text-align: center;
   }
 
   .whatsapp-flotante {
