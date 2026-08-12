@@ -1,17 +1,20 @@
 /* ==========================================
-   COLORES DE EAWEAR.EC
+   PALETA DE COLORES EAWEAR.EC
 ========================================== */
 
 :root {
-  --rojo: #d71920;
-  --rojo-oscuro: #ad0d13;
-  --negro: #101010;
-  --negro-suave: #191919;
-  --crema: #f3efe7;
+  --rojo: #c9181e;
+  --rojo-oscuro: #9f1116;
+  --negro: #111111;
+  --negro-suave: #1b1b1b;
+  --crema: #f4efe6;
+  --crema-claro: #faf7f1;
   --blanco: #ffffff;
-  --verde: #c6ff00;
-  --gris: #817d76;
-  --borde: #c8c3ba;
+  --hueso: #fffaf0;
+  --esmeralda: #064e3b;
+  --esmeralda-claro: #0b6b52;
+  --gris: #77716a;
+  --borde: #cbc2b5;
 }
 
 /* ==========================================
@@ -50,7 +53,7 @@ select {
 }
 
 /* ==========================================
-   MENÚ
+   MENÚ PRINCIPAL
 ========================================== */
 
 .menu {
@@ -62,7 +65,7 @@ select {
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid var(--negro);
-  background: var(--crema);
+  background: rgba(244, 239, 230, 0.97);
 }
 
 .marca {
@@ -98,12 +101,12 @@ select {
 
 .menu nav {
   display: flex;
-  gap: 35px;
+  gap: 30px;
 }
 
 .menu nav a {
   position: relative;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -153,9 +156,14 @@ select {
   color: var(--blanco);
 }
 
+.boton-menu:hover,
+.boton-rojo:hover {
+  background: var(--rojo-oscuro);
+}
+
 .boton-negro {
   background: var(--negro);
-  color: var(--blanco);
+  color: var(--hueso);
 }
 
 /* ==========================================
@@ -170,6 +178,7 @@ select {
   align-items: center;
   overflow: hidden;
   border-bottom: 2px solid var(--negro);
+  background: var(--crema);
 }
 
 .texto-portada {
@@ -192,8 +201,13 @@ select {
   letter-spacing: 0.12em;
 }
 
+.etiqueta-portada span {
+  background: var(--hueso);
+}
+
 .etiqueta-portada strong {
-  background: var(--verde);
+  background: var(--esmeralda);
+  color: var(--hueso);
 }
 
 .portada h1 {
@@ -231,6 +245,7 @@ select {
   font-size: 10px;
   font-weight: 900;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .datos-portada {
@@ -271,14 +286,14 @@ select {
   justify-content: center;
 }
 
-.forma-verde {
+.forma-esmeralda {
   position: absolute;
   top: 6%;
   right: 0;
   width: 68%;
   height: 78%;
-  background: var(--verde);
   border: 3px solid var(--negro);
+  background: var(--esmeralda);
   transform: rotate(8deg);
 }
 
@@ -288,8 +303,8 @@ select {
   left: 5%;
   width: 70%;
   height: 72%;
-  background: var(--rojo);
   border: 3px solid var(--negro);
+  background: var(--rojo);
   transform: rotate(-7deg);
 }
 
@@ -299,7 +314,7 @@ select {
   width: 120%;
   max-width: 760px;
   border: 3px solid var(--negro);
-  box-shadow: 18px 18px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 18px 18px 0 rgba(0, 0, 0, 0.28);
   transform: rotate(-2deg);
 }
 
@@ -310,7 +325,7 @@ select {
   left: -8%;
   padding: 10px 13px;
   background: var(--negro);
-  color: var(--verde);
+  color: var(--hueso);
   font-size: 9px;
   font-weight: 900;
   letter-spacing: 0.2em;
@@ -330,8 +345,8 @@ select {
   flex-direction: column;
   border: 3px solid var(--negro);
   border-radius: 50%;
-  background: var(--verde);
-  color: var(--negro);
+  background: var(--esmeralda);
+  color: var(--hueso);
   transform: rotate(9deg);
 }
 
@@ -348,39 +363,58 @@ select {
 }
 
 .sticker small {
+  color: #dce9e4;
   font-size: 7px;
   font-weight: 900;
 }
 
 /* ==========================================
-   FRANJA EN MOVIMIENTO
+   FRANJA EXTENSA EN MOVIMIENTO
 ========================================== */
 
 .franja {
+  position: relative;
+  width: 100%;
+  min-height: 84px;
+  display: flex;
+  align-items: center;
   overflow: hidden;
-  padding: 18px 0;
-  border-bottom: 2px solid var(--negro);
-  background: var(--verde);
+  border-top: 3px solid var(--negro);
+  border-bottom: 3px solid var(--negro);
+  background: var(--esmeralda);
+  color: var(--hueso);
 }
 
 .franja-contenido {
   width: max-content;
   display: flex;
   align-items: center;
-  gap: 28px;
-  animation: moverFranja 22s linear infinite;
+  white-space: nowrap;
+  animation: moverFranja 32s linear infinite;
 }
 
-.franja-contenido span {
+.grupo-franja {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  padding: 23px 19px;
+}
+
+.grupo-franja span {
   font-family: "Anton", sans-serif;
-  font-size: 25px;
+  font-size: 29px;
   font-weight: 400;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.07em;
 }
 
-.franja-contenido b {
-  color: var(--rojo);
-  font-size: 22px;
+.grupo-franja b {
+  color: var(--hueso);
+  font-size: 24px;
+}
+
+.franja:hover .franja-contenido {
+  animation-play-state: paused;
 }
 
 @keyframes moverFranja {
@@ -389,7 +423,7 @@ select {
   }
 
   to {
-    transform: translateX(-50%);
+    transform: translateX(-33.333%);
   }
 }
 
@@ -401,7 +435,7 @@ select {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   background: var(--negro);
-  color: var(--blanco);
+  color: var(--hueso);
 }
 
 .beneficios article {
@@ -418,7 +452,7 @@ select {
 }
 
 .beneficios article > span {
-  color: var(--verde);
+  color: var(--hueso);
   font-family: "Anton", sans-serif;
   font-size: 36px;
 }
@@ -431,7 +465,7 @@ select {
 
 .beneficios p {
   margin: 0;
-  color: #909090;
+  color: #999999;
   font-size: 11px;
   line-height: 1.6;
 }
@@ -469,7 +503,6 @@ select {
   font-family: "Anton", sans-serif;
   font-weight: 400;
   line-height: 0.88;
-  letter-spacing: -0.01em;
 }
 
 .encabezado-coleccion h2 {
@@ -495,14 +528,15 @@ select {
   margin-top: 13px;
   padding: 8px 11px;
   border: 2px solid var(--negro);
-  background: var(--verde);
+  background: var(--esmeralda);
+  color: var(--hueso);
   font-size: 9px;
   font-weight: 900;
   letter-spacing: 0.1em;
 }
 
 /* ==========================================
-   TARJETAS DE PRODUCTOS
+   PRODUCTOS
 ========================================== */
 
 .productos {
@@ -564,8 +598,8 @@ select {
   display: grid;
   place-items: center;
   border: 2px solid var(--negro);
-  background: var(--verde);
-  color: var(--negro);
+  background: var(--esmeralda);
+  color: var(--hueso);
   font-family: "Anton", sans-serif;
   font-size: 18px;
 }
@@ -590,8 +624,8 @@ select {
 .tipo {
   display: inline-block;
   padding: 6px 9px;
-  background: var(--negro);
-  color: var(--verde);
+  background: var(--esmeralda);
+  color: var(--hueso);
   font-size: 8px;
   font-weight: 900;
   letter-spacing: 0.14em;
@@ -637,7 +671,7 @@ select {
 }
 
 /* ==========================================
-   MENSAJE DE LA PRENDA
+   MENSAJE DE LA CAMISETA
 ========================================== */
 
 .significado {
@@ -646,14 +680,14 @@ select {
   margin-top: 18px;
   padding: 17px 18px 17px 36px;
   border: 2px solid var(--negro);
-  background: var(--crema);
+  background: var(--crema-claro);
 }
 
 .significado::before {
   position: absolute;
   top: 9px;
   left: 12px;
-  color: var(--rojo);
+  color: var(--esmeralda);
   font-family: Georgia, serif;
   font-size: 38px;
   font-weight: 900;
@@ -669,7 +703,7 @@ select {
 }
 
 /* ==========================================
-   TALLA Y COMPRA
+   TALLA Y BOTÓN DE COMPRA
 ========================================== */
 
 .compra {
@@ -694,10 +728,15 @@ select {
   padding: 0 14px;
   border: 2px solid var(--negro);
   border-radius: 0;
-  background: var(--verde);
+  background: var(--crema);
   color: var(--negro);
   font-weight: 900;
   cursor: pointer;
+}
+
+.compra select:focus {
+  outline: 3px solid var(--esmeralda);
+  outline-offset: 2px;
 }
 
 .comprar {
@@ -735,12 +774,12 @@ select {
   gap: 80px;
   border-top: 3px solid var(--negro);
   border-bottom: 3px solid var(--negro);
-  background: var(--rojo);
-  color: var(--blanco);
+  background: var(--esmeralda);
+  color: var(--hueso);
 }
 
-.sobre-titulo.verde {
-  color: var(--verde);
+.sobre-titulo.hueso {
+  color: var(--hueso);
 }
 
 .tallas h2 {
@@ -749,7 +788,7 @@ select {
 
 .tallas > div:first-child > p:last-child {
   max-width: 550px;
-  color: #ffd7d8;
+  color: #dce9e4;
   line-height: 1.7;
 }
 
@@ -776,12 +815,12 @@ select {
 }
 
 .lista-tallas span:hover {
-  background: var(--verde);
-  color: var(--negro);
+  background: var(--hueso);
+  color: var(--esmeralda);
 }
 
 /* ==========================================
-   NOSOTROS
+   NUESTRA ESENCIA
 ========================================== */
 
 .nosotros {
@@ -793,17 +832,16 @@ select {
   align-items: center;
   overflow: hidden;
   background: var(--negro);
-  color: var(--blanco);
+  color: var(--hueso);
 }
 
 .numero-grande {
-  color: var(--verde);
+  color: var(--esmeralda);
   font-family: "Anton", sans-serif;
   font-size: clamp(230px, 32vw, 520px);
   line-height: 0.7;
-  opacity: 0.95;
   transform: rotate(-8deg);
-  -webkit-text-stroke: 4px var(--blanco);
+  -webkit-text-stroke: 3px var(--hueso);
 }
 
 .contenido-nosotros {
@@ -821,7 +859,7 @@ select {
 
 .contenido-nosotros > p:not(.sobre-titulo) {
   max-width: 620px;
-  color: #9c9c9c;
+  color: #a3a3a3;
   font-size: 16px;
   line-height: 1.85;
 }
@@ -830,8 +868,8 @@ select {
   display: inline-block;
   margin-top: 25px;
   padding-bottom: 8px;
-  border-bottom: 2px solid var(--verde);
-  color: var(--blanco);
+  border-bottom: 2px solid var(--hueso);
+  color: var(--hueso);
   font-size: 10px;
   font-weight: 900;
   letter-spacing: 0.1em;
@@ -845,9 +883,18 @@ select {
   padding: 120px 20px;
   border-top: 3px solid var(--negro);
   border-bottom: 3px solid var(--negro);
-  background: var(--verde);
+  background: var(--crema);
   color: var(--negro);
   text-align: center;
+}
+
+.llamada-final::before {
+  display: block;
+  width: 75px;
+  height: 5px;
+  margin: 0 auto 30px;
+  background: var(--esmeralda);
+  content: "";
 }
 
 .llamada-final > p {
@@ -885,7 +932,7 @@ footer {
 }
 
 .marca-footer {
-  color: var(--blanco);
+  color: var(--hueso);
 }
 
 .marca-footer img {
@@ -907,15 +954,18 @@ footer {
   place-items: center;
   border: 3px solid var(--negro);
   border-radius: 50%;
-  background: #25d366;
-  color: var(--negro);
+  background: var(--esmeralda);
+  color: var(--hueso);
   font-size: 13px;
   font-weight: 900;
   box-shadow: 6px 6px 0 var(--negro);
-  transition: transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .whatsapp-flotante:hover {
+  background: var(--esmeralda-claro);
   transform: translate(-3px, -3px);
 }
 
@@ -997,7 +1047,6 @@ footer {
   }
 
   footer {
-    align-items: center;
     flex-direction: column;
     text-align: center;
   }
@@ -1073,7 +1122,7 @@ footer {
     height: 320px;
   }
 
-  .forma-verde,
+  .forma-esmeralda,
   .forma-roja {
     height: 75%;
   }
@@ -1092,8 +1141,25 @@ footer {
     display: none;
   }
 
-  .franja-contenido span {
-    font-size: 20px;
+  .franja {
+    min-height: 70px;
+  }
+
+  .franja-contenido {
+    animation-duration: 25s;
+  }
+
+  .grupo-franja {
+    gap: 27px;
+    padding: 19px 14px;
+  }
+
+  .grupo-franja span {
+    font-size: 22px;
+  }
+
+  .grupo-franja b {
+    font-size: 18px;
   }
 
   .coleccion {
