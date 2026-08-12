@@ -455,15 +455,6 @@ img {
   background: #f5f3ef;
 }
 
-.significado-titulo {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--rojo);
-  font-size: 9px;
-  font-weight: 900;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
 
 .significado p {
   margin: 0;
