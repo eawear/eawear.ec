@@ -58,9 +58,6 @@ productos.forEach((producto, indice) => {
   tarjeta.innerHTML = `
     <div class="foto">
 
-      <span class="numero">
-        0${indice + 1}
-      </span>
 
       <img
         src="${producto.imagen}"
