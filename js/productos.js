@@ -64,7 +64,8 @@ productos.forEach((producto, indice) => {
 
       <img
         src="${producto.imagen}"
-        alt="Camisa oversize ${producto.nombre}"
+        alt="Camiseta oversize ${producto.nombre}"
+        loading="lazy"
       >
 
     </div>
@@ -77,7 +78,9 @@ productos.forEach((producto, indice) => {
           ${producto.tipo}
         </span>
 
-        <h3>${producto.nombre}</h3>
+        <h3>
+          ${producto.nombre}
+        </h3>
 
         <span class="color">
           ${producto.color} · Corte oversize
@@ -88,7 +91,6 @@ productos.forEach((producto, indice) => {
         </p>
 
         <div class="significado">
-
 
           <p>
             ${producto.significado}
@@ -101,19 +103,19 @@ productos.forEach((producto, indice) => {
       <div class="compra">
 
         <label>
-          Talla
+          SELECCIONA TU TALLA
 
           <select aria-label="Talla para ${producto.nombre}">
-            <option value="S">S</option>
-            <option value="M" selected>M</option>
-            <option value="L">L</option>
-            <option value="XL">XL</option>
+            <option value="S">Talla S</option>
+            <option value="M" selected>Talla M</option>
+            <option value="L">Talla L</option>
+            <option value="XL">Talla XL</option>
           </select>
 
         </label>
 
         <button class="comprar">
-          Pedir por WhatsApp ↗
+          PEDIR POR WHATSAPP ↗
         </button>
 
       </div>
@@ -128,7 +130,7 @@ productos.forEach((producto, indice) => {
     const talla = selector.value;
 
     const mensaje =
-      `Hola EAWEAR.EC, quiero comprar la camisa oversize ` +
+      `Hola EAWEAR.EC, quiero comprar la camiseta oversize ` +
       `${producto.nombre}, talla ${talla}, por $${producto.precio}. ` +
       `¿Está disponible?`;
 
