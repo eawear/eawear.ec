@@ -13,7 +13,7 @@ const productos = [
   {
     nombre: "All For This Glory",
     color: "Vino tinto",
-    tipo: "Statement tee",
+    tipo: "EAWEAR collection",
     precio: "22,99",
     significado:
       "Todo tu esfuerzo tendrá una recompensa. Sigue luchando por tus sueños, confía en tu proceso y nunca te rindas, porque la gloria también puede ser tuya.",
@@ -22,7 +22,7 @@ const productos = [
   {
     nombre: "Love Love Love Flakk",
     color: "Chocolate",
-    tipo: "Street sketch",
+    tipo: "EAWEAR collection",
     precio: "22,99",
     significado:
       "Ama intensamente, vive con libertad y expresa lo que sientes sin miedo. Tu autenticidad es parte de lo que te hace diferente y especial.",
@@ -109,13 +109,12 @@ productos.forEach((producto, indice) => {
             <option value="S">Talla S</option>
             <option value="M" selected>Talla M</option>
             <option value="L">Talla L</option>
-            <option value="XL">Talla XL</option>
           </select>
 
         </label>
 
         <button class="comprar">
-          PEDIR POR WHATSAPP ↗
+          PEDIR POR WHATSAPP
         </button>
 
       </div>
