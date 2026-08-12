@@ -12,7 +12,7 @@
   --gris-claro: #ececec;
   --esmeralda: #064e3b;
   --whatsapp: #25d366;
-  --whatsapp-oscuro: #159947;
+  --whatsapp-oscuro: #128c4a;
 }
 
 /* ==========================================
@@ -1370,4 +1370,20 @@ footer {
   .valores-marca strong {
     margin: 0;
   }
+}
+/* ==========================================
+   COLORES OFICIALES DE WHATSAPP
+========================================== */
+
+.boton-menu,
+.comprar,
+.whatsapp-flotante {
+  background: #25d366;
+  color: #ffffff;
+}
+
+.boton-menu:hover,
+.comprar:hover,
+.whatsapp-flotante:hover {
+  background: #128c4a;
 }
