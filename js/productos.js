@@ -66,7 +66,7 @@ productos.forEach((producto) => {
 
   /* La talla M aparece seleccionada inicialmente */
 
-  const tallaInicial = "M";
+  const tallaInicial = "S";
   const precioInicial = preciosPorTalla[tallaInicial];
 
   tarjeta.innerHTML = `
