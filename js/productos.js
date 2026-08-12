@@ -6,6 +6,8 @@ const productos = [
     color: "Blanco / Verde",
     tipo: "Tropical drop",
     precio: "22,99",
+    significado:
+      "Inspirada en San Bartolomé y la esencia del Caribe. Representa libertad, tranquilidad y el valor de disfrutar cada momento de la vida.",
     imagen: "img/west-indies.png"
   },
   {
@@ -13,13 +15,17 @@ const productos = [
     color: "Vino tinto",
     tipo: "Statement tee",
     precio: "22,99",
+    significado:
+      "Todo esfuerzo tiene una recompensa. Sigue luchando por tus sueños, porque la gloria pertenece a quienes nunca se rinden.",
     imagen: "img/glory.png"
   },
   {
-    nombre: "Love Love Flakk",
+    nombre: "Love Love Love Flakk",
     color: "Chocolate",
     tipo: "Street sketch",
     precio: "22,99",
+    significado:
+      "Inspirada en la música y el estilo de Rels B. Una prenda para quienes aman intensamente, viven libremente y expresan lo que sienten sin miedo.",
     imagen: "img/flakk.png"
   },
   {
@@ -27,6 +33,8 @@ const productos = [
     color: "Negro",
     tipo: "Night edition",
     precio: "22,99",
+    significado:
+      "“Let your dreams be bigger than your fears.” No permitas que el miedo limite tu camino: atrévete a soñar en grande y confía en todo lo que puedes alcanzar.",
     imagen: "img/dark-spirit.png"
   },
   {
@@ -34,6 +42,8 @@ const productos = [
     color: "Blanco / Negro",
     tipo: "Japan series",
     precio: "22,99",
+    significado:
+      "Los grandes resultados nacen de pequeños avances. Con constancia, paciencia y dedicación, cada día puedes aprender, mejorar y acercarte a tu mejor versión.",
     imagen: "img/kaisen.png"
   }
 ];
@@ -76,6 +86,18 @@ productos.forEach((producto, indice) => {
         <p class="precio">
           $${producto.precio}
         </p>
+
+        <div class="significado">
+
+          <span class="significado-titulo">
+            SIGNIFICADO
+          </span>
+
+          <p>
+            ${producto.significado}
+          </p>
+
+        </div>
 
       </div>
 
