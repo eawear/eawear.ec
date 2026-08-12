@@ -7,7 +7,7 @@ const productos = [
     tipo: "Tropical drop",
     precio: "22,99",
     significado:
-      "Inspirada en San Bartolomé y la esencia del Caribe. Representa libertad, tranquilidad y el valor de disfrutar cada momento de la vida.",
+      "Disfruta cada momento con libertad y tranquilidad. Permítete hacer una pausa, sentir la esencia del Caribe y recordar que la vida también está hecha para disfrutarla.",
     imagen: "img/west-indies.png"
   },
   {
@@ -16,7 +16,7 @@ const productos = [
     tipo: "Statement tee",
     precio: "22,99",
     significado:
-      "Todo esfuerzo tiene una recompensa. Sigue luchando por tus sueños, porque la gloria pertenece a quienes nunca se rinden.",
+      "Todo tu esfuerzo tendrá una recompensa. Sigue luchando por tus sueños, confía en tu proceso y nunca te rindas, porque la gloria también puede ser tuya.",
     imagen: "img/glory.png"
   },
   {
@@ -25,25 +25,25 @@ const productos = [
     tipo: "Street sketch",
     precio: "22,99",
     significado:
-      "Inspirada en la música y el estilo de Rels B. Una prenda para quienes aman intensamente, viven libremente y expresan lo que sienten sin miedo.",
+      "Ama intensamente, vive con libertad y expresa lo que sientes sin miedo. Tu autenticidad es parte de lo que te hace diferente y especial.",
     imagen: "img/flakk.png"
   },
   {
-  nombre: "Dream Beyond Fear",
-  color: "Negro",
-  tipo: "Japan series",
-  precio: "22,99",
-  significado:
-    "“Let your dreams be bigger than your fears.” No permitas que el miedo limite tu camino: atrévete a soñar en grande y confía en todo lo que puedes alcanzar.",
-  imagen: "img/dark-spirit.png"
-},
+    nombre: "Dream Beyond Fear",
+    color: "Negro",
+    tipo: "Japan series",
+    precio: "22,99",
+    significado:
+      "Haz que tus sueños sean más grandes que tus miedos. Atrévete a avanzar, confía en tus capacidades y no permitas que el temor limite todo lo que puedes alcanzar.",
+    imagen: "img/dark-spirit.png"
+  },
   {
     nombre: "Kaisen",
     color: "Blanco / Negro",
     tipo: "Japan series",
     precio: "22,99",
     significado:
-      "Los grandes resultados nacen de pequeños avances. Con constancia, paciencia y dedicación, cada día puedes aprender, mejorar y acercarte a tu mejor versión.",
+      "No necesitas cambiarlo todo de inmediato. Avanza un poco cada día, aprende de cada experiencia y confía en que tu constancia te acercará a tu mejor versión.",
     imagen: "img/kaisen.png"
   }
 ];
@@ -89,9 +89,6 @@ productos.forEach((producto, indice) => {
 
         <div class="significado">
 
-          <span class="significado-titulo">
-            SIGNIFICADO
-          </span>
 
           <p>
             ${producto.significado}
