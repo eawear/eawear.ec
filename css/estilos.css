@@ -1,10 +1,432 @@
-/* PRECIO DEL PRODUCTO */
+/* ========================================
+   COLORES GENERALES
+======================================== */
+
+:root {
+  --rojo: #cf1719;
+  --negro: #0b0b0b;
+  --fondo: #f2f0ec;
+  --gris: #716d69;
+  --blanco: #ffffff;
+}
+
+/* ========================================
+   CONFIGURACIÓN GENERAL
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--negro);
+  font-family: "Inter", Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ========================================
+   MENÚ PRINCIPAL
+======================================== */
+
+.menu {
+  position: relative;
+  z-index: 10;
+  height: 84px;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d6d2cc;
+  background: var(--fondo);
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.marca img {
+  width: 50px;
+  height: 38px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.marca strong {
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.menu nav {
+  display: flex;
+  gap: 35px;
+}
+
+.menu nav a,
+.enlace {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.menu nav a {
+  transition: color 0.3s ease;
+}
+
+.menu nav a:hover {
+  color: var(--rojo);
+}
+
+/* ========================================
+   BOTONES
+======================================== */
+
+.boton {
+  display: inline-block;
+  padding: 16px 23px;
+  border: none;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+}
+
+.rojo {
+  background: var(--rojo);
+  color: var(--blanco);
+}
+
+.rojo:hover {
+  background: #ab1013;
+}
+
+.blanco {
+  background: var(--blanco);
+  color: var(--negro);
+}
+
+/* ========================================
+   PORTADA
+======================================== */
+
+.portada {
+  min-height: calc(100vh - 84px);
+  padding: 6% 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  overflow: hidden;
+}
+
+.portada-texto {
+  position: relative;
+  z-index: 2;
+}
+
+.etiqueta {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.portada h1,
+.titulo-seccion h2,
+.nosotros h2,
+.llamada h2 {
+  margin: 25px 0;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+}
+
+.portada h1 {
+  font-size: clamp(75px, 10vw, 155px);
+}
+
+.portada h1 span,
+.nosotros h2 span {
+  color: var(--rojo);
+}
+
+.descripcion {
+  max-width: 520px;
+  color: var(--gris);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.acciones {
+  margin-top: 34px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.enlace {
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--negro);
+}
+
+/* ========================================
+   IMAGEN DE LA PORTADA
+======================================== */
+
+.portada-imagen {
+  position: relative;
+  height: 620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.figura-roja {
+  position: absolute;
+  width: 70%;
+  height: 90%;
+  background: var(--rojo);
+  transform: rotate(8deg);
+
+  clip-path: polygon(
+    10% 0,
+    100% 6%,
+    88% 100%,
+    0 86%
+  );
+}
+
+.portada-imagen img {
+  position: relative;
+  z-index: 1;
+  width: 120%;
+  transform: rotate(-3deg);
+  filter: drop-shadow(0 28px 30px #0008);
+}
+
+.drop {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 7%;
+  padding: 17px 23px;
+  display: flex;
+  flex-direction: column;
+  background: #111111;
+  color: var(--blanco);
+  transform: rotate(3deg);
+}
+
+.drop strong {
+  font-family: "Anton", sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.drop small {
+  color: #aaaaaa;
+}
+
+/* ========================================
+   VENTAJAS
+======================================== */
+
+.ventajas {
+  padding: 35px 5%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  background: var(--negro);
+  color: var(--blanco);
+}
+
+.ventajas div {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.ventajas b {
+  color: var(--rojo);
+  font-family: "Anton", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.ventajas span {
+  display: flex;
+  flex-direction: column;
+  color: #888888;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.ventajas strong {
+  margin-bottom: 5px;
+  color: var(--blanco);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ========================================
+   SECCIÓN DE LA COLECCIÓN
+======================================== */
+
+.coleccion {
+  padding: 110px 5%;
+}
+
+.titulo-seccion {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 40px;
+}
+
+.titulo-seccion h2 {
+  margin-bottom: 0;
+  font-size: clamp(60px, 8vw, 110px);
+}
+
+.titulo-seccion > p {
+  max-width: 420px;
+  color: var(--gris);
+  line-height: 1.7;
+}
+
+/* ========================================
+   CUADRÍCULA DE PRODUCTOS
+======================================== */
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.producto {
+  overflow: hidden;
+  background: var(--blanco);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.04);
+}
+
+.producto:last-child {
+  grid-column: 1 / -1;
+}
+
+/* ========================================
+   IMAGEN DEL PRODUCTO
+======================================== */
+
+.foto {
+  position: relative;
+  overflow: hidden;
+  background: #ddd9d5;
+}
+
+.foto img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.58 / 1;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.producto:hover .foto img {
+  transform: scale(1.025);
+}
+
+.numero {
+  position: absolute;
+  z-index: 2;
+  top: 18px;
+  left: 18px;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  background: #111111;
+  color: var(--blanco);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* ========================================
+   INFORMACIÓN DEL PRODUCTO
+======================================== */
+
+.datos {
+  padding: 25px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.informacion-producto {
+  flex: 1;
+  min-width: 0;
+}
+
+.datos h3 {
+  margin: 6px 0;
+  font-family: "Anton", sans-serif;
+  font-size: 31px;
+  font-weight: 400;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.tipo {
+  display: block;
+  color: var(--rojo);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.color {
+  display: block;
+  color: var(--gris);
+  font-size: 12px;
+}
+
+/* ========================================
+   PRECIO DEL PRODUCTO
+======================================== */
 
 .precio {
   margin: 14px 0 0;
   color: var(--negro);
   font-family: "Anton", sans-serif;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
@@ -17,16 +439,16 @@
   font-size: 9px;
   font-weight: 900;
   letter-spacing: 0.12em;
+  vertical-align: middle;
 }
 
-/* ESPACIO PARA EL SIGNIFICADO */
-
-.informacion-producto {
-  flex: 1;
-}
+/* ========================================
+   SIGNIFICADO MOTIVADOR
+======================================== */
 
 .significado {
-  max-width: 500px;
+  width: 100%;
+  max-width: 510px;
   margin-top: 18px;
   padding: 16px 18px;
   border-left: 3px solid var(--rojo);
@@ -40,6 +462,7 @@
   font-size: 9px;
   font-weight: 900;
   letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 
 .significado p {
@@ -49,11 +472,370 @@
   line-height: 1.65;
 }
 
-/* ADAPTACIÓN PARA CELULARES */
+/* ========================================
+   SELECTOR DE TALLA Y COMPRA
+======================================== */
 
-@media (max-width: 850px) {
+.compra {
+  display: flex;
+  align-items: end;
+  gap: 10px;
+}
+
+.compra label {
+  font-size: 9px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.compra select {
+  display: block;
+  height: 44px;
+  margin-top: 6px;
+  padding: 0 13px;
+  border: 1px solid #cccccc;
+  background: var(--blanco);
+  color: var(--negro);
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.comprar {
+  min-height: 44px;
+  padding: 0 17px;
+  border: none;
+  background: var(--rojo);
+  color: var(--blanco);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.comprar:hover {
+  background: #a90f12;
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   SECCIÓN NOSOTROS
+======================================== */
+
+.nosotros {
+  padding: 120px 8%;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 9%;
+  align-items: end;
+  background: var(--negro);
+  color: var(--blanco);
+}
+
+.nosotros h2 {
+  font-size: clamp(60px, 8vw, 120px);
+}
+
+.nosotros > div:last-child {
+  color: #999999;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.nosotros a {
+  display: inline-block;
+  margin-top: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rojo);
+  color: var(--blanco);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ========================================
+   LLAMADA FINAL
+======================================== */
+
+.llamada {
+  padding: 115px 20px;
+  background: var(--rojo);
+  color: var(--blanco);
+  text-align: center;
+}
+
+.llamada > p {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.17em;
+}
+
+.llamada h2 {
+  font-size: clamp(60px, 9vw, 130px);
+}
+
+/* ========================================
+   PIE DE PÁGINA
+======================================== */
+
+footer {
+  padding: 35px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  background: #050505;
+  color: #888888;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+footer .marca {
+  color: var(--blanco);
+}
+
+footer .marca img {
+  mix-blend-mode: normal;
+}
+
+/* ========================================
+   BOTÓN FLOTANTE DE WHATSAPP
+======================================== */
+
+.whatsapp {
+  position: fixed;
+  z-index: 20;
+  right: 24px;
+  bottom: 24px;
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #22c55e;
+  color: var(--blanco);
+  font-weight: 900;
+  box-shadow: 0 10px 25px #0004;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.whatsapp:hover {
+  background: #18a94d;
+  transform: scale(1.08);
+}
+
+/* ========================================
+   ADAPTACIÓN PARA TABLETS
+======================================== */
+
+@media (max-width: 900px) {
+  .menu nav {
+    display: none;
+  }
+
+  .portada {
+    grid-template-columns: 1fr;
+    padding-top: 70px;
+  }
+
+  .portada-imagen {
+    height: 450px;
+    margin-top: 25px;
+  }
+
+  .portada-imagen img {
+    width: 110%;
+  }
+
+  .ventajas {
+    grid-template-columns: 1fr;
+  }
+
+  .titulo-seccion {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .productos {
+    grid-template-columns: 1fr;
+  }
+
+  .producto:last-child {
+    grid-column: auto;
+  }
+
+  .datos {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .informacion-producto,
   .significado {
     width: 100%;
     max-width: 100%;
+  }
+
+  .compra {
+    width: 100%;
+  }
+
+  .comprar {
+    flex: 1;
+  }
+
+  .nosotros {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ========================================
+   ADAPTACIÓN PARA CELULARES
+======================================== */
+
+@media (max-width: 520px) {
+  .menu {
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  .marca {
+    gap: 7px;
+  }
+
+  .marca img {
+    width: 42px;
+    height: 34px;
+  }
+
+  .marca strong {
+    font-size: 13px;
+  }
+
+  .menu > .boton {
+    padding: 12px 10px;
+    font-size: 9px;
+  }
+
+  .portada {
+    min-height: auto;
+    padding: 65px 20px 45px;
+  }
+
+  .portada h1 {
+    font-size: 70px;
+  }
+
+  .descripcion {
+    font-size: 15px;
+  }
+
+  .acciones {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .portada-imagen {
+    height: 300px;
+  }
+
+  .figura-roja {
+    width: 75%;
+    height: 85%;
+  }
+
+  .drop {
+    right: 0;
+    bottom: 0;
+    padding: 10px 13px;
+  }
+
+  .drop strong {
+    font-size: 20px;
+  }
+
+  .coleccion {
+    padding: 75px 20px;
+  }
+
+  .titulo-seccion h2 {
+    font-size: 59px;
+  }
+
+  .foto img {
+    aspect-ratio: 1.35 / 1;
+  }
+
+  .datos {
+    padding: 20px;
+  }
+
+  .datos h3 {
+    font-size: 28px;
+  }
+
+  .precio {
+    font-size: 27px;
+  }
+
+  .significado {
+    padding: 15px;
+  }
+
+  .significado p {
+    font-size: 12px;
+  }
+
+  .compra {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .compra label,
+  .compra select,
+  .comprar {
+    width: 100%;
+  }
+
+  .comprar {
+    min-height: 48px;
+  }
+
+  .nosotros {
+    padding: 85px 20px;
+  }
+
+  .nosotros h2,
+  .llamada h2 {
+    font-size: 57px;
+  }
+
+  .nosotros > div:last-child {
+    font-size: 16px;
+  }
+
+  .llamada {
+    padding: 85px 20px;
+  }
+
+  .whatsapp {
+    right: 17px;
+    bottom: 17px;
+    width: 54px;
+    height: 54px;
   }
 }
