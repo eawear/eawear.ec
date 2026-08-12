@@ -579,22 +579,6 @@ select {
   transform: scale(1.03);
 }
 
-.numero {
-  position: absolute;
-  z-index: 3;
-  top: 18px;
-  left: 18px;
-  min-width: 48px;
-  height: 48px;
-  padding: 0 8px;
-  display: grid;
-  place-items: center;
-  background: var(--rojo);
-  color: var(--blanco);
-  font-family: "Anton", sans-serif;
-  font-size: 18px;
-}
-
 /* ==========================================
    INFORMACIÓN DEL PRODUCTO
 ========================================== */
@@ -1225,13 +1209,6 @@ footer {
 
   .foto img {
     aspect-ratio: 1.45 / 1;
-  }
-
-  .numero {
-    top: 13px;
-    left: 13px;
-    min-width: 42px;
-    height: 42px;
   }
 
   .datos {
