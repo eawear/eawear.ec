@@ -793,53 +793,97 @@ select {
 }
 
 /* ==========================================
-   NOSOTROS
+   SECCIÓN SOBRE EAWEAR.EC
 ========================================== */
 
 .nosotros {
-  position: relative;
-  min-height: 750px;
+  min-height: 720px;
   padding: 110px 8%;
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: 0.9fr 1.1fr;
   align-items: center;
-  overflow: hidden;
+  gap: 8%;
   background: var(--negro);
   color: var(--blanco);
 }
 
-.numero-grande {
-  color: var(--blanco);
+.identidad-nosotros {
+  position: relative;
+}
+
+.identidad-nosotros::before {
+  display: block;
+  width: 70px;
+  height: 5px;
+  margin-bottom: 30px;
+  background: var(--rojo);
+  content: "";
+}
+
+.identidad-nosotros h2 {
+  margin: 0;
   font-family: "Anton", sans-serif;
-  font-size: clamp(230px, 32vw, 520px);
-  line-height: 0.7;
-  opacity: 0.06;
-  transform: rotate(-8deg);
+  font-size: clamp(70px, 8vw, 125px);
+  font-weight: 400;
+  line-height: 0.88;
+}
+
+.identidad-nosotros h2 span {
+  color: var(--rojo);
 }
 
 .contenido-nosotros {
   position: relative;
-  z-index: 2;
 }
 
-.contenido-nosotros h2 {
-  font-size: clamp(65px, 8.2vw, 125px);
+.contenido-nosotros h3 {
+  margin: 0 0 28px;
+  color: var(--blanco);
+  font-family: "Anton", sans-serif;
+  font-size: clamp(28px, 3vw, 47px);
+  font-weight: 400;
+  line-height: 1.05;
 }
 
-.contenido-nosotros h2 span {
-  color: var(--rojo);
-}
-
-.contenido-nosotros > p:not(.sobre-titulo) {
-  max-width: 620px;
-  color: #a3a3a3;
-  font-size: 16px;
+.contenido-nosotros > p {
+  max-width: 650px;
+  margin: 0 0 18px;
+  color: #b3b3b3;
+  font-size: 15px;
   line-height: 1.85;
 }
 
-.contenido-nosotros a {
+.valores-marca {
+  margin: 35px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.valores-marca div {
+  padding: 18px 12px;
+  background: var(--negro-suave);
+  text-align: center;
+}
+
+.valores-marca strong {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--rojo);
+  font-family: "Anton", sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.valores-marca span {
+  color: var(--blanco);
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.contenido-nosotros > a {
   display: inline-block;
-  margin-top: 25px;
   padding-bottom: 8px;
   border-bottom: 2px solid var(--rojo);
   color: var(--blanco);
@@ -1282,5 +1326,48 @@ footer {
     bottom: 17px;
     width: 55px;
     height: 55px;
+  }
+}
+@media (max-width: 950px) {
+  .nosotros {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+}
+
+@media (max-width: 560px) {
+  .nosotros {
+    min-height: auto;
+    padding: 85px 18px;
+    gap: 45px;
+  }
+
+  .identidad-nosotros h2 {
+    font-size: 65px;
+  }
+
+  .contenido-nosotros h3 {
+    font-size: 32px;
+  }
+
+  .contenido-nosotros > p {
+    font-size: 14px;
+  }
+
+  .valores-marca {
+    grid-template-columns: 1fr;
+  }
+
+  .valores-marca div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 18px;
+    text-align: left;
+  }
+
+  .valores-marca strong {
+    margin: 0;
   }
 }
