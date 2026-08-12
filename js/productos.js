@@ -29,14 +29,14 @@ const productos = [
     imagen: "img/flakk.png"
   },
   {
-    nombre: "Dark Spirit",
-    color: "Negro",
-    tipo: "Night edition",
-    precio: "22,99",
-    significado:
-      "“Let your dreams be bigger than your fears.” No permitas que el miedo limite tu camino: atrévete a soñar en grande y confía en todo lo que puedes alcanzar.",
-    imagen: "img/dark-spirit.png"
-  },
+  nombre: "Dream Beyond Fear",
+  color: "Negro",
+  tipo: "Japan series",
+  precio: "22,99",
+  significado:
+    "“Let your dreams be bigger than your fears.” No permitas que el miedo limite tu camino: atrévete a soñar en grande y confía en todo lo que puedes alcanzar.",
+  imagen: "img/dark-spirit.png"
+},
   {
     nombre: "Kaisen",
     color: "Blanco / Negro",
