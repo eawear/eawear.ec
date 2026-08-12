@@ -115,19 +115,21 @@ productos.forEach((producto) => {
         <label>
           SELECCIONA TU TALLA
 
-          <select aria-label="Talla para ${producto.nombre}">
-            <option value="S">
-              Talla S — $${preciosPorTalla.S}
-            </option>
+<select aria-label="Talla para ${producto.nombre}">
 
-            <option value="M" selected>
-              Talla M — $${preciosPorTalla.M}
-            </option>
+  <option value="S" selected>
+    Talla S
+  </option>
 
-            <option value="L">
-              Talla L — $${preciosPorTalla.L}
-            </option>
-          </select>
+  <option value="M">
+    Talla M
+  </option>
+
+  <option value="L">
+    Talla L
+  </option>
+
+</select>
 
         </label>
 
