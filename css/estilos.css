@@ -1,18 +1,22 @@
-/* ========================================
-   COLORES GENERALES
-======================================== */
+/* ==========================================
+   COLORES DE EAWEAR.EC
+========================================== */
 
 :root {
-  --rojo: #cf1719;
-  --negro: #0b0b0b;
-  --fondo: #f2f0ec;
-  --gris: #716d69;
+  --rojo: #d71920;
+  --rojo-oscuro: #ad0d13;
+  --negro: #101010;
+  --negro-suave: #191919;
+  --crema: #f3efe7;
   --blanco: #ffffff;
+  --verde: #c6ff00;
+  --gris: #817d76;
+  --borde: #c8c3ba;
 }
 
-/* ========================================
+/* ==========================================
    CONFIGURACIÓN GENERAL
-======================================== */
+========================================== */
 
 * {
   box-sizing: border-box;
@@ -24,7 +28,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--fondo);
+  overflow-x: hidden;
+  background: var(--crema);
   color: var(--negro);
   font-family: "Inter", Arial, sans-serif;
 }
@@ -35,23 +40,29 @@ a {
 }
 
 img {
+  display: block;
   max-width: 100%;
 }
 
-/* ========================================
-   MENÚ PRINCIPAL
-======================================== */
+button,
+select {
+  font-family: inherit;
+}
+
+/* ==========================================
+   MENÚ
+========================================== */
 
 .menu {
   position: relative;
-  z-index: 10;
-  height: 84px;
+  z-index: 50;
+  height: 88px;
   padding: 0 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #d6d2cc;
-  background: var(--fondo);
+  border-bottom: 2px solid var(--negro);
+  background: var(--crema);
 }
 
 .marca {
@@ -61,16 +72,28 @@ img {
 }
 
 .marca img {
-  width: 50px;
-  height: 38px;
+  width: 55px;
+  height: 42px;
   object-fit: contain;
   mix-blend-mode: multiply;
 }
 
+.marca div {
+  display: flex;
+  flex-direction: column;
+}
+
 .marca strong {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 900;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
+}
+
+.marca span {
+  margin-top: 2px;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
 }
 
 .menu nav {
@@ -78,311 +101,481 @@ img {
   gap: 35px;
 }
 
-.menu nav a,
-.enlace {
-  font-size: 12px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
 .menu nav a {
-  transition: color 0.3s ease;
-}
-
-.menu nav a:hover {
-  color: var(--rojo);
-}
-
-/* ========================================
-   BOTONES
-======================================== */
-
-.boton {
-  display: inline-block;
-  padding: 16px 23px;
-  border: none;
-  text-transform: uppercase;
+  position: relative;
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 0.08em;
-  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.menu nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+  left: 0;
+  height: 3px;
+  background: var(--rojo);
+  content: "";
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.menu nav a:hover::after {
+  transform: scaleX(1);
+}
+
+/* ==========================================
+   BOTONES
+========================================== */
+
+.boton {
+  display: inline-block;
+  padding: 17px 23px;
+  border: 2px solid var(--negro);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
   transition:
-    background 0.3s ease,
-    transform 0.3s ease;
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .boton:hover {
-  transform: translateY(-2px);
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0 var(--negro);
 }
 
-.rojo {
+.boton-menu,
+.boton-rojo {
   background: var(--rojo);
   color: var(--blanco);
 }
 
-.rojo:hover {
-  background: #ab1013;
+.boton-negro {
+  background: var(--negro);
+  color: var(--blanco);
 }
 
-.blanco {
-  background: var(--blanco);
-  color: var(--negro);
-}
-
-/* ========================================
+/* ==========================================
    PORTADA
-======================================== */
+========================================== */
 
 .portada {
-  min-height: calc(100vh - 84px);
-  padding: 6% 5%;
+  min-height: calc(100vh - 88px);
+  padding: 5% 5% 4%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 0.95fr;
   align-items: center;
   overflow: hidden;
+  border-bottom: 2px solid var(--negro);
 }
 
-.portada-texto {
+.texto-portada {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
-.etiqueta {
-  font-size: 10px;
+.etiqueta-portada {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.etiqueta-portada span,
+.etiqueta-portada strong {
+  padding: 8px 12px;
+  border: 2px solid var(--negro);
+  font-size: 9px;
   font-weight: 900;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
-.portada h1,
-.titulo-seccion h2,
-.nosotros h2,
-.llamada h2 {
-  margin: 25px 0;
-  font-family: "Anton", sans-serif;
-  font-weight: 400;
-  line-height: 0.88;
-  letter-spacing: -0.02em;
+.etiqueta-portada strong {
+  background: var(--verde);
 }
 
 .portada h1 {
-  font-size: clamp(75px, 10vw, 155px);
+  margin: 30px 0 25px;
+  font-family: "Anton", sans-serif;
+  font-size: clamp(85px, 10.7vw, 170px);
+  font-weight: 400;
+  line-height: 0.82;
+  letter-spacing: -0.02em;
 }
 
-.portada h1 span,
-.nosotros h2 span {
+.portada h1 span {
   color: var(--rojo);
+  text-shadow: 4px 4px 0 var(--negro);
+  -webkit-text-stroke: 2px var(--negro);
 }
 
-.descripcion {
-  max-width: 520px;
-  color: var(--gris);
-  font-size: 17px;
-  line-height: 1.7;
+.descripcion-portada {
+  max-width: 575px;
+  color: #5e5a54;
+  font-size: 16px;
+  line-height: 1.75;
 }
 
-.acciones {
-  margin-top: 34px;
+.acciones-portada {
+  margin-top: 30px;
   display: flex;
   align-items: center;
   gap: 28px;
 }
 
-.enlace {
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--negro);
+.enlace-portada {
+  padding-bottom: 7px;
+  border-bottom: 2px solid var(--negro);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
 }
 
-/* ========================================
-   IMAGEN DE LA PORTADA
-======================================== */
+.datos-portada {
+  margin-top: 45px;
+  display: flex;
+  gap: 42px;
+}
 
-.portada-imagen {
+.datos-portada > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.datos-portada strong {
+  font-family: "Anton", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.datos-portada span {
+  color: var(--gris);
+  font-size: 8px;
+  font-weight: 900;
+  line-height: 1.35;
+  letter-spacing: 0.1em;
+}
+
+/* ==========================================
+   IMAGEN DE PORTADA
+========================================== */
+
+.imagen-portada {
   position: relative;
-  height: 620px;
+  height: 650px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.figura-roja {
+.forma-verde {
   position: absolute;
-  width: 70%;
-  height: 90%;
-  background: var(--rojo);
-  transform: rotate(8deg);
-
-  clip-path: polygon(
-    10% 0,
-    100% 6%,
-    88% 100%,
-    0 86%
-  );
-}
-
-.portada-imagen img {
-  position: relative;
-  z-index: 1;
-  width: 120%;
-  transform: rotate(-3deg);
-  filter: drop-shadow(0 28px 30px #0008);
-}
-
-.drop {
-  position: absolute;
-  z-index: 2;
+  top: 6%;
   right: 0;
-  bottom: 7%;
-  padding: 17px 23px;
-  display: flex;
-  flex-direction: column;
-  background: #111111;
-  color: var(--blanco);
-  transform: rotate(3deg);
+  width: 68%;
+  height: 78%;
+  background: var(--verde);
+  border: 3px solid var(--negro);
+  transform: rotate(8deg);
 }
 
-.drop strong {
-  font-family: "Anton", sans-serif;
-  font-size: 25px;
-  font-weight: 400;
+.forma-roja {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 70%;
+  height: 72%;
+  background: var(--rojo);
+  border: 3px solid var(--negro);
+  transform: rotate(-7deg);
 }
 
-.drop small {
-  color: #aaaaaa;
+.imagen-portada img {
+  position: relative;
+  z-index: 2;
+  width: 120%;
+  max-width: 760px;
+  border: 3px solid var(--negro);
+  box-shadow: 18px 18px 0 rgba(0, 0, 0, 0.3);
+  transform: rotate(-2deg);
 }
 
-/* ========================================
-   VENTAJAS
-======================================== */
-
-.ventajas {
-  padding: 35px 5%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+.texto-vertical {
+  position: absolute;
+  z-index: 4;
+  top: 19%;
+  left: -8%;
+  padding: 10px 13px;
   background: var(--negro);
-  color: var(--blanco);
+  color: var(--verde);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  writing-mode: vertical-rl;
 }
 
-.ventajas div {
+.sticker {
+  position: absolute;
+  z-index: 5;
+  right: -2%;
+  bottom: 4%;
+  width: 130px;
+  height: 130px;
   display: flex;
   align-items: center;
-  gap: 18px;
+  justify-content: center;
+  flex-direction: column;
+  border: 3px solid var(--negro);
+  border-radius: 50%;
+  background: var(--verde);
+  color: var(--negro);
+  transform: rotate(9deg);
 }
 
-.ventajas b {
-  color: var(--rojo);
+.sticker span {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+}
+
+.sticker strong {
   font-family: "Anton", sans-serif;
   font-size: 28px;
   font-weight: 400;
 }
 
-.ventajas span {
+.sticker small {
+  font-size: 7px;
+  font-weight: 900;
+}
+
+/* ==========================================
+   FRANJA EN MOVIMIENTO
+========================================== */
+
+.franja {
+  overflow: hidden;
+  padding: 18px 0;
+  border-bottom: 2px solid var(--negro);
+  background: var(--verde);
+}
+
+.franja-contenido {
+  width: max-content;
   display: flex;
-  flex-direction: column;
-  color: #888888;
+  align-items: center;
+  gap: 28px;
+  animation: moverFranja 22s linear infinite;
+}
+
+.franja-contenido span {
+  font-family: "Anton", sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.franja-contenido b {
+  color: var(--rojo);
+  font-size: 22px;
+}
+
+@keyframes moverFranja {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ==========================================
+   BENEFICIOS
+========================================== */
+
+.beneficios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: var(--negro);
+  color: var(--blanco);
+}
+
+.beneficios article {
+  min-height: 150px;
+  padding: 38px 5vw;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-right: 1px solid #373737;
+}
+
+.beneficios article:last-child {
+  border-right: none;
+}
+
+.beneficios article > span {
+  color: var(--verde);
+  font-family: "Anton", sans-serif;
+  font-size: 36px;
+}
+
+.beneficios h3 {
+  margin: 0 0 8px;
   font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+.beneficios p {
+  margin: 0;
+  color: #909090;
+  font-size: 11px;
   line-height: 1.6;
 }
 
-.ventajas strong {
-  margin-bottom: 5px;
-  color: var(--blanco);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-/* ========================================
-   SECCIÓN DE LA COLECCIÓN
-======================================== */
+/* ==========================================
+   COLECCIÓN
+========================================== */
 
 .coleccion {
   padding: 110px 5%;
+  background: var(--crema);
 }
 
-.titulo-seccion {
-  margin-bottom: 50px;
+.encabezado-coleccion {
+  margin-bottom: 65px;
   display: flex;
-  justify-content: space-between;
   align-items: end;
-  gap: 40px;
+  justify-content: space-between;
+  gap: 50px;
 }
 
-.titulo-seccion h2 {
-  margin-bottom: 0;
-  font-size: clamp(60px, 8vw, 110px);
+.sobre-titulo {
+  margin: 0 0 18px;
+  color: var(--rojo);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.17em;
 }
 
-.titulo-seccion > p {
+.encabezado-coleccion h2,
+.tallas h2,
+.contenido-nosotros h2,
+.llamada-final h2 {
+  margin: 0;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+}
+
+.encabezado-coleccion h2 {
+  font-size: clamp(70px, 9vw, 135px);
+}
+
+.encabezado-coleccion h2 span {
+  color: var(--rojo);
+}
+
+.descripcion-coleccion {
   max-width: 420px;
-  color: var(--gris);
-  line-height: 1.7;
 }
 
-/* ========================================
-   CUADRÍCULA DE PRODUCTOS
-======================================== */
+.descripcion-coleccion p {
+  color: var(--gris);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.descripcion-coleccion span {
+  display: inline-block;
+  margin-top: 13px;
+  padding: 8px 11px;
+  border: 2px solid var(--negro);
+  background: var(--verde);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+/* ==========================================
+   TARJETAS DE PRODUCTOS
+========================================== */
 
 .productos {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  gap: 35px;
 }
 
 .producto {
+  position: relative;
   overflow: hidden;
+  border: 3px solid var(--negro);
   background: var(--blanco);
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.04);
+  box-shadow: 10px 10px 0 var(--negro);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.producto:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 16px 16px 0 var(--negro);
 }
 
 .producto:last-child {
   grid-column: 1 / -1;
 }
 
-/* ========================================
-   IMAGEN DEL PRODUCTO
-======================================== */
+/* ==========================================
+   FOTOGRAFÍA DEL PRODUCTO
+========================================== */
 
 .foto {
   position: relative;
   overflow: hidden;
-  background: #ddd9d5;
+  border-bottom: 3px solid var(--negro);
+  background: #d9d5d0;
 }
 
 .foto img {
-  display: block;
   width: 100%;
   aspect-ratio: 1.58 / 1;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease;
 }
 
 .producto:hover .foto img {
-  transform: scale(1.025);
+  transform: scale(1.03);
 }
 
 .numero {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   top: 18px;
   left: 18px;
-  width: 38px;
-  height: 38px;
+  min-width: 48px;
+  height: 48px;
+  padding: 0 8px;
   display: grid;
   place-items: center;
-  background: #111111;
-  color: var(--blanco);
-  font-size: 11px;
-  font-weight: 800;
+  border: 2px solid var(--negro);
+  background: var(--verde);
+  color: var(--negro);
+  font-family: "Anton", sans-serif;
+  font-size: 18px;
 }
 
-/* ========================================
+/* ==========================================
    INFORMACIÓN DEL PRODUCTO
-======================================== */
+========================================== */
 
 .datos {
-  padding: 25px;
+  padding: 28px;
   display: flex;
   align-items: end;
   justify-content: space-between;
@@ -394,265 +587,376 @@ img {
   min-width: 0;
 }
 
-.datos h3 {
-  margin: 6px 0;
-  font-family: "Anton", sans-serif;
-  font-size: 31px;
-  font-weight: 400;
-  line-height: 1.05;
-  text-transform: uppercase;
-}
-
 .tipo {
-  display: block;
-  color: var(--rojo);
-  font-size: 9px;
+  display: inline-block;
+  padding: 6px 9px;
+  background: var(--negro);
+  color: var(--verde);
+  font-size: 8px;
   font-weight: 900;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
-.color {
-  display: block;
-  color: var(--gris);
-  font-size: 12px;
+.datos h3 {
+  margin: 13px 0 8px;
+  font-family: "Anton", sans-serif;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
-/* ========================================
-   PRECIO DEL PRODUCTO
-======================================== */
+.color {
+  color: var(--gris);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* ==========================================
+   PRECIO
+========================================== */
 
 .precio {
-  margin: 14px 0 0;
-  color: var(--negro);
+  margin: 16px 0 0;
+  color: var(--rojo);
   font-family: "Anton", sans-serif;
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 400;
-  letter-spacing: 0.02em;
 }
 
 .precio::before {
-  content: "PRECIO";
   margin-right: 8px;
-  color: var(--rojo);
+  color: var(--negro);
   font-family: "Inter", Arial, sans-serif;
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 900;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.13em;
   vertical-align: middle;
+  content: "PRECIO";
 }
 
-/* ========================================
-   SIGNIFICADO MOTIVADOR
-======================================== */
+/* ==========================================
+   MENSAJE DE LA PRENDA
+========================================== */
 
 .significado {
-  width: 100%;
-  max-width: 510px;
+  position: relative;
+  max-width: 530px;
   margin-top: 18px;
-  padding: 16px 18px;
-  border-left: 3px solid var(--rojo);
-  background: #f5f3ef;
+  padding: 17px 18px 17px 36px;
+  border: 2px solid var(--negro);
+  background: var(--crema);
 }
 
+.significado::before {
+  position: absolute;
+  top: 9px;
+  left: 12px;
+  color: var(--rojo);
+  font-family: Georgia, serif;
+  font-size: 38px;
+  font-weight: 900;
+  content: "“";
+}
 
 .significado p {
   margin: 0;
-  color: #625e5a;
+  color: #5d5953;
   font-size: 12px;
-  line-height: 1.65;
+  font-weight: 600;
+  line-height: 1.7;
 }
 
-/* ========================================
-   SELECTOR DE TALLA Y COMPRA
-======================================== */
+/* ==========================================
+   TALLA Y COMPRA
+========================================== */
 
 .compra {
+  min-width: 190px;
   display: flex;
-  align-items: end;
+  align-items: stretch;
+  flex-direction: column;
   gap: 10px;
 }
 
 .compra label {
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 900;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
 }
 
 .compra select {
-  display: block;
-  height: 44px;
+  width: 100%;
+  height: 48px;
   margin-top: 6px;
-  padding: 0 13px;
-  border: 1px solid #cccccc;
-  background: var(--blanco);
+  padding: 0 14px;
+  border: 2px solid var(--negro);
+  border-radius: 0;
+  background: var(--verde);
   color: var(--negro);
-  font-family: "Inter", Arial, sans-serif;
-  font-weight: 800;
+  font-weight: 900;
   cursor: pointer;
 }
 
 .comprar {
-  min-height: 44px;
-  padding: 0 17px;
-  border: none;
+  min-height: 50px;
+  padding: 12px 17px;
+  border: 2px solid var(--negro);
   background: var(--rojo);
   color: var(--blanco);
-  font-family: "Inter", Arial, sans-serif;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 900;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  white-space: nowrap;
   cursor: pointer;
   transition:
-    background 0.3s ease,
-    transform 0.3s ease;
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .comprar:hover {
-  background: #a90f12;
-  transform: translateY(-2px);
+  background: var(--rojo-oscuro);
+  transform: translate(-3px, -3px);
+  box-shadow: 5px 5px 0 var(--negro);
 }
 
-/* ========================================
-   SECCIÓN NOSOTROS
-======================================== */
+/* ==========================================
+   GUÍA DE TALLAS
+========================================== */
+
+.tallas {
+  padding: 90px 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+  border-top: 3px solid var(--negro);
+  border-bottom: 3px solid var(--negro);
+  background: var(--rojo);
+  color: var(--blanco);
+}
+
+.sobre-titulo.verde {
+  color: var(--verde);
+}
+
+.tallas h2 {
+  font-size: clamp(65px, 8vw, 120px);
+}
+
+.tallas > div:first-child > p:last-child {
+  max-width: 550px;
+  color: #ffd7d8;
+  line-height: 1.7;
+}
+
+.lista-tallas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 3px solid var(--negro);
+  border-left: 3px solid var(--negro);
+}
+
+.lista-tallas span {
+  min-height: 130px;
+  display: grid;
+  place-items: center;
+  border-right: 3px solid var(--negro);
+  border-bottom: 3px solid var(--negro);
+  background: var(--crema);
+  color: var(--negro);
+  font-family: "Anton", sans-serif;
+  font-size: 55px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.lista-tallas span:hover {
+  background: var(--verde);
+  color: var(--negro);
+}
+
+/* ==========================================
+   NOSOTROS
+========================================== */
 
 .nosotros {
-  padding: 120px 8%;
+  position: relative;
+  min-height: 750px;
+  padding: 110px 8%;
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 9%;
-  align-items: end;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: center;
+  overflow: hidden;
   background: var(--negro);
   color: var(--blanco);
 }
 
-.nosotros h2 {
-  font-size: clamp(60px, 8vw, 120px);
+.numero-grande {
+  color: var(--verde);
+  font-family: "Anton", sans-serif;
+  font-size: clamp(230px, 32vw, 520px);
+  line-height: 0.7;
+  opacity: 0.95;
+  transform: rotate(-8deg);
+  -webkit-text-stroke: 4px var(--blanco);
 }
 
-.nosotros > div:last-child {
-  color: #999999;
-  font-size: 18px;
-  line-height: 1.8;
+.contenido-nosotros {
+  position: relative;
+  z-index: 2;
 }
 
-.nosotros a {
+.contenido-nosotros h2 {
+  font-size: clamp(65px, 8.2vw, 125px);
+}
+
+.contenido-nosotros h2 span {
+  color: var(--rojo);
+}
+
+.contenido-nosotros > p:not(.sobre-titulo) {
+  max-width: 620px;
+  color: #9c9c9c;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.contenido-nosotros a {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 25px;
   padding-bottom: 8px;
-  border-bottom: 1px solid var(--rojo);
+  border-bottom: 2px solid var(--verde);
   color: var(--blanco);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
-/* ========================================
+/* ==========================================
    LLAMADA FINAL
-======================================== */
+========================================== */
 
-.llamada {
-  padding: 115px 20px;
-  background: var(--rojo);
-  color: var(--blanco);
+.llamada-final {
+  padding: 120px 20px;
+  border-top: 3px solid var(--negro);
+  border-bottom: 3px solid var(--negro);
+  background: var(--verde);
+  color: var(--negro);
   text-align: center;
 }
 
-.llamada > p {
-  font-size: 10px;
+.llamada-final > p {
+  font-size: 9px;
   font-weight: 900;
-  letter-spacing: 0.17em;
+  letter-spacing: 0.18em;
 }
 
-.llamada h2 {
-  font-size: clamp(60px, 9vw, 130px);
+.llamada-final h2 {
+  margin: 25px 0 45px;
+  font-size: clamp(70px, 9vw, 135px);
 }
 
-/* ========================================
+.llamada-final h2 span {
+  color: var(--rojo);
+  -webkit-text-stroke: 2px var(--negro);
+}
+
+/* ==========================================
    PIE DE PÁGINA
-======================================== */
+========================================== */
 
 footer {
-  padding: 35px 5%;
+  padding: 38px 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 30px;
   background: #050505;
-  color: #888888;
-  font-size: 11px;
+  color: #858585;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
 }
 
-footer .marca {
+.marca-footer {
   color: var(--blanco);
 }
 
-footer .marca img {
+.marca-footer img {
   mix-blend-mode: normal;
 }
 
-/* ========================================
-   BOTÓN FLOTANTE DE WHATSAPP
-======================================== */
+/* ==========================================
+   WHATSAPP FLOTANTE
+========================================== */
 
-.whatsapp {
+.whatsapp-flotante {
   position: fixed;
-  z-index: 20;
+  z-index: 100;
   right: 24px;
   bottom: 24px;
-  width: 58px;
-  height: 58px;
+  width: 62px;
+  height: 62px;
   display: grid;
   place-items: center;
+  border: 3px solid var(--negro);
   border-radius: 50%;
-  background: #22c55e;
-  color: var(--blanco);
+  background: #25d366;
+  color: var(--negro);
+  font-size: 13px;
   font-weight: 900;
-  box-shadow: 0 10px 25px #0004;
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease;
+  box-shadow: 6px 6px 0 var(--negro);
+  transition: transform 0.2s ease;
 }
 
-.whatsapp:hover {
-  background: #18a94d;
-  transform: scale(1.08);
+.whatsapp-flotante:hover {
+  transform: translate(-3px, -3px);
 }
 
-/* ========================================
-   ADAPTACIÓN PARA TABLETS
-======================================== */
+/* ==========================================
+   TABLETS
+========================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
   .menu nav {
     display: none;
   }
 
   .portada {
-    grid-template-columns: 1fr;
     padding-top: 70px;
-  }
-
-  .portada-imagen {
-    height: 450px;
-    margin-top: 25px;
-  }
-
-  .portada-imagen img {
-    width: 110%;
-  }
-
-  .ventajas {
     grid-template-columns: 1fr;
   }
 
-  .titulo-seccion {
+  .imagen-portada {
+    height: 500px;
+    margin-top: 35px;
+  }
+
+  .imagen-portada img {
+    width: 100%;
+  }
+
+  .texto-vertical {
+    left: 0;
+  }
+
+  .beneficios {
+    grid-template-columns: 1fr;
+  }
+
+  .beneficios article {
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid #373737;
+  }
+
+  .encabezado-coleccion {
     align-items: start;
     flex-direction: column;
   }
@@ -671,37 +975,42 @@ footer .marca img {
   }
 
   .informacion-producto,
-  .significado {
+  .significado,
+  .compra {
     width: 100%;
     max-width: 100%;
   }
 
-  .compra {
-    width: 100%;
-  }
-
-  .comprar {
-    flex: 1;
+  .tallas {
+    grid-template-columns: 1fr;
   }
 
   .nosotros {
     grid-template-columns: 1fr;
   }
 
+  .numero-grande {
+    position: absolute;
+    top: 50px;
+    right: -30px;
+    opacity: 0.15;
+  }
+
   footer {
+    align-items: center;
     flex-direction: column;
     text-align: center;
   }
 }
 
-/* ========================================
-   ADAPTACIÓN PARA CELULARES
-======================================== */
+/* ==========================================
+   CELULARES
+========================================== */
 
-@media (max-width: 520px) {
+@media (max-width: 560px) {
   .menu {
-    height: 70px;
-    padding: 0 20px;
+    height: 72px;
+    padding: 0 17px;
   }
 
   .marca {
@@ -709,66 +1018,109 @@ footer .marca img {
   }
 
   .marca img {
-    width: 42px;
-    height: 34px;
+    width: 41px;
+    height: 33px;
   }
 
   .marca strong {
     font-size: 13px;
   }
 
-  .menu > .boton {
-    padding: 12px 10px;
-    font-size: 9px;
+  .marca span {
+    font-size: 5px;
+  }
+
+  .boton-menu {
+    padding: 11px 8px;
+    font-size: 8px;
   }
 
   .portada {
     min-height: auto;
-    padding: 65px 20px 45px;
+    padding: 55px 18px 45px;
+  }
+
+  .etiqueta-portada {
+    align-items: start;
+    flex-direction: column;
   }
 
   .portada h1 {
     font-size: 70px;
   }
 
-  .descripcion {
-    font-size: 15px;
+  .portada h1 span {
+    text-shadow: 2px 2px 0 var(--negro);
+    -webkit-text-stroke: 1px var(--negro);
   }
 
-  .acciones {
+  .descripcion-portada {
+    font-size: 14px;
+  }
+
+  .acciones-portada {
     align-items: start;
     flex-direction: column;
   }
 
-  .portada-imagen {
-    height: 300px;
+  .datos-portada {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
   }
 
-  .figura-roja {
-    width: 75%;
-    height: 85%;
+  .imagen-portada {
+    height: 320px;
   }
 
-  .drop {
+  .forma-verde,
+  .forma-roja {
+    height: 75%;
+  }
+
+  .sticker {
     right: 0;
-    bottom: 0;
-    padding: 10px 13px;
+    width: 90px;
+    height: 90px;
   }
 
-  .drop strong {
+  .sticker strong {
+    font-size: 20px;
+  }
+
+  .texto-vertical {
+    display: none;
+  }
+
+  .franja-contenido span {
     font-size: 20px;
   }
 
   .coleccion {
-    padding: 75px 20px;
+    padding: 80px 18px;
   }
 
-  .titulo-seccion h2 {
-    font-size: 59px;
+  .encabezado-coleccion h2 {
+    font-size: 63px;
+  }
+
+  .productos {
+    gap: 30px;
+  }
+
+  .producto {
+    box-shadow: 7px 7px 0 var(--negro);
   }
 
   .foto img {
     aspect-ratio: 1.35 / 1;
+  }
+
+  .numero {
+    top: 12px;
+    left: 12px;
+    min-width: 41px;
+    height: 41px;
   }
 
   .datos {
@@ -776,57 +1128,65 @@ footer .marca img {
   }
 
   .datos h3 {
-    font-size: 28px;
+    font-size: 31px;
   }
 
   .precio {
-    font-size: 27px;
+    font-size: 31px;
   }
 
   .significado {
-    padding: 15px;
+    padding: 16px 15px 16px 34px;
   }
 
   .significado p {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .compra {
-    align-items: stretch;
-    flex-direction: column;
+    min-width: 100%;
   }
 
-  .compra label,
-  .compra select,
-  .comprar {
-    width: 100%;
+  .tallas {
+    padding: 80px 18px;
+    gap: 45px;
   }
 
-  .comprar {
-    min-height: 48px;
+  .tallas h2 {
+    font-size: 67px;
+  }
+
+  .lista-tallas span {
+    min-height: 90px;
+    font-size: 42px;
   }
 
   .nosotros {
-    padding: 85px 20px;
+    min-height: 680px;
+    padding: 90px 18px;
   }
 
-  .nosotros h2,
-  .llamada h2 {
-    font-size: 57px;
+  .contenido-nosotros h2 {
+    font-size: 60px;
   }
 
-  .nosotros > div:last-child {
-    font-size: 16px;
+  .contenido-nosotros > p:not(.sobre-titulo) {
+    font-size: 14px;
   }
 
-  .llamada {
-    padding: 85px 20px;
+  .llamada-final {
+    padding: 90px 18px;
   }
 
-  .whatsapp {
+  .llamada-final h2 {
+    font-size: 61px;
+  }
+
+  .whatsapp-flotante {
     right: 17px;
     bottom: 17px;
-    width: 54px;
-    height: 54px;
+    width: 55px;
+    height: 55px;
+    box-shadow: 4px 4px 0 var(--negro);
   }
 }
