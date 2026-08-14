@@ -1632,3 +1632,106 @@ body.modal-abierto {
     gap: 12px;
   }
 }
+
+/* =================================
+   ENLACES RÁPIDOS
+================================= */
+
+.enlaces-rapidos {
+  width: 100%;
+  padding: 52px 6%;
+  background-color: #ffffff;
+  border-top: 1px solid #eeeeee;
+}
+
+.enlaces-rapidos-contenido {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.enlaces-rapidos h2 {
+  margin: 0 0 25px;
+  padding: 0;
+  color: #101010;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.lista-enlaces {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px 40px;
+}
+
+.lista-enlaces a {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  color: #101010;
+  background: transparent;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+  text-transform: none;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.lista-enlaces a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #c91520;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.lista-enlaces a:hover {
+  color: #c91520;
+  transform: translateY(-2px);
+}
+
+.lista-enlaces a:hover::after {
+  transform: scaleX(1);
+}
+
+/* =================================
+   ENLACES RÁPIDOS EN CELULARES
+================================= */
+
+@media (max-width: 600px) {
+  .enlaces-rapidos {
+    padding: 38px 22px;
+  }
+
+  .enlaces-rapidos h2 {
+    margin-bottom: 21px;
+    font-size: 20px;
+  }
+
+  .lista-enlaces {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .lista-enlaces a {
+    width: auto;
+    font-size: 16px;
+  }
+}
