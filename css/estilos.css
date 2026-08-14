@@ -1814,3 +1814,170 @@ body.modal-abierto {
     font-size: 15px;
   }
 }
+
+/* ==========================================
+   BENEFICIOS DE COMPRA — EAWEAR
+========================================== */
+
+.beneficios-compra {
+  width: 100%;
+  padding: 48px 6% 30px;
+  color: #101010;
+  background-color: #f6f3ee;
+  border-top: 1px solid #e6e1da;
+  border-bottom: 1px solid #e6e1da;
+}
+
+.beneficios-contenido {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.beneficio-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 190px;
+  padding: 25px;
+  text-align: center;
+}
+
+.beneficio-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 15%;
+  right: 0;
+  width: 1px;
+  height: 70%;
+  background-color: #c9c3ba;
+}
+
+.beneficio-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  margin-bottom: 18px;
+  color: #101010;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.beneficio-icono svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.beneficio-item:hover .beneficio-icono {
+  color: #c91520;
+  transform: translateY(-5px);
+}
+
+.beneficio-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.beneficio-texto strong {
+  color: #101010;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.beneficio-texto span {
+  color: #6d6a66;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.beneficios-nota {
+  max-width: 900px;
+  margin: 20px auto 0;
+  color: #77736e;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+  .beneficios-contenido {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .beneficio-item:nth-child(2)::after {
+    display: none;
+  }
+
+  .beneficio-item:nth-child(-n+2) {
+    border-bottom: 1px solid #c9c3ba;
+  }
+}
+
+/* CELULARES */
+
+@media (max-width: 550px) {
+  .beneficios-compra {
+    padding: 28px 20px 24px;
+  }
+
+  .beneficios-contenido {
+    grid-template-columns: 1fr;
+  }
+
+  .beneficio-item {
+    flex-direction: row;
+    justify-content: flex-start;
+    min-height: auto;
+    padding: 22px 4px;
+    text-align: left;
+  }
+
+  .beneficio-item:not(:last-child) {
+    border-bottom: 1px solid #d7d2cb;
+  }
+
+  .beneficio-item::after {
+    display: none;
+  }
+
+  .beneficio-icono {
+    flex: 0 0 52px;
+    width: 52px;
+    height: 52px;
+    margin: 0 18px 0 0;
+  }
+
+  .beneficio-texto {
+    align-items: flex-start;
+  }
+
+  .beneficio-texto strong {
+    font-size: 16px;
+  }
+
+  .beneficio-texto span {
+    font-size: 13px;
+  }
+
+  .beneficios-nota {
+    margin-top: 18px;
+    line-height: 1.5;
+  }
+}
