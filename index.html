@@ -334,32 +334,38 @@
 
     <!-- TALLAS -->
 
-    <section class="tallas" id="tallas">
+<section class="tallas" id="tallas">
 
-      <div>
+  <div>
 
-        <p class="sobre-titulo claro">
-          ENCUENTRA TU TALLA
-        </p>
+    <p class="sobre-titulo claro">
+      ENCUENTRA TU TALLA
+    </p>
 
-        <h2>FIT OVERSIZE</h2>
+    <h2>FIT OVERSIZE</h2>
 
-        <p>
-          Nuestras camisetas tienen una silueta amplia y relajada.
-          Elige tu talla habitual para conservar el estilo oversize.
-        </p>
+    <p>
+      Nuestras camisetas tienen una silueta amplia y relajada.
+      Elige tu talla habitual para conservar el estilo oversize.
+    </p>
 
-      </div>
+    <button
+      class="boton-guia"
+      type="button"
+      id="abrirGuia"
+    >
+      VER MEDIDAS EN CENTÍMETROS
+    </button>
 
-      <div class="lista-tallas">
+  </div>
 
-        <span>S</span>
-        <span>M</span>
-        <span>L</span>
+  <div class="lista-tallas">
+    <span>S</span>
+    <span>M</span>
+    <span>L</span>
+  </div>
 
-      </div>
-
-    </section>
+</section>
 
     <!-- NOSOTROS -->
 
@@ -490,8 +496,113 @@
     WA
   </a>
 
-<script src="js/productos.js?v=3"></script>
+<!-- VENTANA GENERAL DE MEDIDAS -->
 
+<div
+  class="modal-tallas"
+  id="modalTallas"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="tituloGuia"
+  hidden
+>
+
+  <div class="fondo-modal" id="fondoModal"></div>
+
+  <div class="contenido-modal">
+
+    <button
+      class="cerrar-modal"
+      id="cerrarGuia"
+      type="button"
+      aria-label="Cerrar guía de tallas"
+    >
+      ×
+    </button>
+
+    <p class="subtitulo-guia">
+      EAWEAR.EC
+    </p>
+
+    <h2 id="tituloGuia">
+      GUÍA DE TALLAS
+    </h2>
+
+    <p class="introduccion-guia">
+      Compara estas medidas con una camiseta que te quede bien.
+      Todas las medidas están expresadas en centímetros.
+    </p>
+
+    <div class="tabla-contenedor">
+
+      <table class="tabla-tallas">
+
+        <thead>
+          <tr>
+            <th>Talla</th>
+            <th>Largo</th>
+            <th>Ancho</th>
+            <th>Manga</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><strong>S</strong></td>
+            <td>65 cm</td>
+            <td>57 cm</td>
+            <td>44 cm</td>
+          </tr>
+
+          <tr>
+            <td><strong>M</strong></td>
+            <td>69 cm</td>
+            <td>59 cm</td>
+            <td>46 cm</td>
+          </tr>
+
+          <tr>
+            <td><strong>L</strong></td>
+            <td>73 cm</td>
+            <td>61 cm</td>
+            <td>48 cm</td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <div class="instrucciones-medidas">
+
+      <h3>¿CÓMO SE TOMAN LAS MEDIDAS?</h3>
+
+      <p>
+        <strong>Ancho:</strong>
+        mide la camiseta extendida de axila a axila.
+      </p>
+
+      <p>
+        <strong>Largo:</strong>
+        mide desde el punto más alto del hombro hasta la parte inferior.
+      </p>
+
+      <p>
+        <strong>Manga:</strong>
+        mide desde el cuello hasta el borde de la manga.
+      </p>
+
+    </div>
+
+    <p class="nota-medidas">
+      Las medidas pueden presentar una variación aproximada de 1 a 2 cm.
+    </p>
+
+  </div>
+
+</div>
+  
+<script src="js/productos.js?v=5"></script>
 </body>
 
 </html>
