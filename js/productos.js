@@ -174,3 +174,55 @@ productos.forEach((producto) => {
 
   lista.appendChild(tarjeta);
 });
+
+/* ==========================================
+   GUÍA GENERAL DE TALLAS
+========================================== */
+
+const botonAbrirGuia =
+  document.getElementById("abrirGuia");
+
+const botonCerrarGuia =
+  document.getElementById("cerrarGuia");
+
+const fondoModal =
+  document.getElementById("fondoModal");
+
+const modalTallas =
+  document.getElementById("modalTallas");
+
+function abrirGuiaTallas() {
+  modalTallas.hidden = false;
+  document.body.classList.add("modal-abierto");
+  botonCerrarGuia.focus();
+}
+
+function cerrarGuiaTallas() {
+  modalTallas.hidden = true;
+  document.body.classList.remove("modal-abierto");
+  botonAbrirGuia.focus();
+}
+
+botonAbrirGuia.addEventListener(
+  "click",
+  abrirGuiaTallas
+);
+
+botonCerrarGuia.addEventListener(
+  "click",
+  cerrarGuiaTallas
+);
+
+fondoModal.addEventListener(
+  "click",
+  cerrarGuiaTallas
+);
+
+document.addEventListener("keydown", (evento) => {
+  if (
+    evento.key === "Escape" &&
+    !modalTallas.hidden
+  ) {
+    cerrarGuiaTallas();
+  }
+});
