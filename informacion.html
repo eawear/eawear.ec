@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Preguntas frecuentes, cambios, devoluciones, términos y privacidad de EAWEAR.EC.">
+  <title>Información y políticas | EAWEAR.EC</title>
+
+  <style>
+    :root {
+      --rojo: #c91520;
+      --rojo-oscuro: #991019;
+      --negro: #101010;
+      --gris: #646464;
+      --gris-claro: #ececec;
+      --blanco: #ffffff;
+      --whatsapp: #25d366;
+      --radio: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--negro);
+      background: var(--blanco);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+
+    .cabecera {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 72px;
+      padding: 10px clamp(18px, 5vw, 72px);
+      background: rgba(255, 255, 255, .96);
+      border-bottom: 1px solid var(--gris-claro);
+      backdrop-filter: blur(10px);
+    }
+
+    .marca {
+      color: var(--negro);
+      font-size: 1.15rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-decoration: none;
+    }
+
+    .marca span { color: var(--rojo); }
+
+    .volver {
+      padding: 10px 15px;
+      border: 1px solid var(--negro);
+      border-radius: 999px;
+      font-size: .82rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: .2s ease;
+    }
+
+    .volver:hover {
+      color: var(--blanco);
+      background: var(--negro);
+    }
+
+    .portada {
+      padding: clamp(70px, 10vw, 130px) clamp(18px, 6vw, 90px);
+      color: var(--blanco);
+      background:
+        linear-gradient(110deg, rgba(0,0,0,.94), rgba(0,0,0,.78)),
+        repeating-linear-gradient(135deg, transparent 0 26px, rgba(201,21,32,.18) 26px 28px);
+    }
+
+    .portada-contenido {
+      width: min(900px, 100%);
+      margin: auto;
+    }
+
+    .etiqueta {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--rojo);
+      font-size: .8rem;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0 0 20px;
+      font-size: clamp(2.4rem, 8vw, 5.5rem);
+      line-height: .95;
+      letter-spacing: -.04em;
+      text-transform: uppercase;
+    }
+
+    .portada p {
+      max-width: 680px;
+      margin: 0;
+      color: #dedede;
+      font-size: clamp(1rem, 2vw, 1.18rem);
+    }
+
+    .navegacion {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      width: min(1120px, calc(100% - 36px));
+      margin: -30px auto 55px;
+      overflow: hidden;
+      background: var(--blanco);
+      border-radius: var(--radio);
+      box-shadow: 0 18px 45px rgba(0,0,0,.12);
+    }
+
+    .navegacion a {
+      display: grid;
+      place-items: center;
+      min-height: 82px;
+      padding: 15px;
+      border-right: 1px solid var(--gris-claro);
+      font-size: .8rem;
+      font-weight: 900;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: .2s ease;
+    }
+
+    .navegacion a:last-child { border-right: 0; }
+
+    .navegacion a:hover {
+      color: var(--blanco);
+      background: var(--rojo);
+    }
+
+    main {
+      width: min(960px, calc(100% - 36px));
+      margin: auto;
+    }
+
+    .bloque {
+      padding: 40px 0 56px;
+      scroll-margin-top: 105px;
+      border-bottom: 1px solid var(--gris-claro);
+    }
+
+    .bloque:last-child { border-bottom: 0; }
+
+    .numero {
+      color: var(--rojo);
+      font-weight: 900;
+      letter-spacing: .14em;
+    }
+
+    h2 {
+      margin: 5px 0 12px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .introduccion {
+      max-width: 760px;
+      margin: 0 0 28px;
+      color: var(--gris);
+    }
+
+    details {
+      margin-bottom: 12px;
+      border: 1px solid #dddddd;
+      border-radius: 14px;
+      background: var(--blanco);
+    }
+
+    details[open] { border-color: var(--rojo); }
+
+    summary {
+      position: relative;
+      padding: 20px 55px 20px 20px;
+      cursor: pointer;
+      list-style: none;
+      font-weight: 900;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: "+";
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      color: var(--rojo);
+      font-size: 1.55rem;
+      transform: translateY(-50%);
+    }
+
+    details[open] summary::after { content: "−"; }
+
+    .respuesta {
+      padding: 0 20px 20px;
+      color: #444;
+    }
+
+    .respuesta p:first-child { margin-top: 0; }
+    .respuesta p:last-child { margin-bottom: 0; }
+    .respuesta ul { padding-left: 22px; }
+
+    .aviso {
+      margin: 25px 0;
+      padding: 20px;
+      border-radius: 14px;
+      color: var(--blanco);
+      background: var(--negro);
+    }
+
+    .aviso strong { color: #ff5560; }
+
+    .tabla-contenedor {
+      overflow-x: auto;
+      margin: 22px 0;
+    }
+
+    table {
+      width: 100%;
+      min-width: 560px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 14px;
+      border-bottom: 1px solid #dedede;
+      text-align: left;
+    }
+
+    th {
+      color: var(--blanco);
+      background: var(--negro);
+    }
+
+    .contacto {
+      margin: 55px 0 80px;
+      padding: clamp(28px, 6vw, 55px);
+      color: var(--blanco);
+      background: var(--rojo);
+      border-radius: var(--radio);
+      text-align: center;
+    }
+
+    .contacto h2 { margin-top: 0; }
+
+    .boton-whatsapp {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 15px 24px;
+      color: #081b0e;
+      background: var(--whatsapp);
+      border-radius: 999px;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 35px 18px;
+      color: #cfcfcf;
+      background: var(--negro);
+      text-align: center;
+    }
+
+    footer a { color: var(--blanco); }
+
+    @media (max-width: 720px) {
+      .cabecera { min-height: 64px; }
+
+      .navegacion {
+        grid-template-columns: 1fr 1fr;
+        margin-top: -22px;
+      }
+
+      .navegacion a {
+        min-height: 70px;
+        border-bottom: 1px solid var(--gris-claro);
+      }
+
+      .navegacion a:nth-child(2) { border-right: 0; }
+      .navegacion a:nth-child(n+3) { border-bottom: 0; }
+
+      .bloque { padding: 32px 0 44px; }
+      summary { padding: 18px 48px 18px 17px; }
+      .respuesta { padding: 0 17px 18px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="cabecera">
+    <a class="marca" href="index.html">EAWEAR<span>.EC</span></a>
+    <a class="volver" href="index.html">← Volver a la tienda</a>
+  </header>
+
+  <section class="portada">
+    <div class="portada-contenido">
+      <span class="etiqueta">Compra con confianza</span>
+      <h1>Información clara, estilo sin dudas.</h1>
+      <p>Todo lo que necesitas saber antes y después de pedir tu camiseta EAWEAR.EC.</p>
+    </div>
+  </section>
+
+  <nav class="navegacion" aria-label="Secciones de información">
+    <a href="#faqs">Preguntas frecuentes</a>
+    <a href="#devoluciones">Cambios y devoluciones</a>
+    <a href="#terminos">Términos de servicio</a>
+    <a href="#privacidad">Privacidad</a>
+  </nav>
+
+  <main>
+    <section class="bloque" id="faqs">
+      <span class="numero">01 — AYUDA</span>
+      <h2>Preguntas frecuentes</h2>
+      <p class="introduccion">Respuestas rápidas para comprar con seguridad.</p>
+
+      <details open>
+        <summary>¿Realizan envíos?</summary>
+        <div class="respuesta"><p>Sí. Realizamos envíos a todo Ecuador por medio de Servientrega. Antes de confirmar el pedido te indicaremos el costo y el tiempo estimado según tu ciudad.</p></div>
+      </details>
+
+      <details>
+        <summary>¿Cómo hago un pedido?</summary>
+        <div class="respuesta"><p>Elige el diseño y la talla en la tienda, pulsa “Pedir por WhatsApp” y confirma con nosotros la disponibilidad, los datos de entrega y el método de pago.</p></div>
+      </details>
+
+      <details>
+        <summary>¿Qué formas de pago aceptan?</summary>
+        <div class="respuesta"><p>Aceptamos transferencia bancaria, efectivo y pago contraentrega cuando esté disponible para tu destino. En la modalidad contraentrega pagas al recibir el pedido y se aplica un valor adicional por el servicio. El total será informado antes de confirmar la compra. Nunca compartas claves bancarias: para verificar una transferencia solo solicitaremos el comprobante.</p></div>
+      </details>
+
+      <details>
+        <summary>¿Cómo funciona el pago contraentrega?</summary>
+        <div class="respuesta"><p>Seleccionas tu camiseta y confirmas los datos por WhatsApp. Si Servientrega ofrece contraentrega para tu destino, pagas el pedido al momento de recibirlo. Esta modalidad tiene un valor adicional, que te comunicaremos junto con el total antes de realizar el envío.</p></div>
+      </details>
+
+      <details>
+        <summary>¿Qué tallas están disponibles?</summary>
+        <div class="respuesta">
+          <p>Trabajamos con tallas S, M y L en corte oversized. Estas son las medidas referenciales de la prenda extendida:</p>
+          <div class="tabla-contenedor">
+            <table>
+              <thead><tr><th>Talla</th><th>Largo</th><th>Ancho</th><th>Manga</th></tr></thead>
+              <tbody>
+                <tr><td>S</td><td>65 cm</td><td>57 cm</td><td>44 cm</td></tr>
+                <tr><td>M</td><td>69 cm</td><td>59 cm</td><td>46 cm</td></tr>
+                <tr><td>L</td><td>73 cm</td><td>61 cm</td><td>48 cm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Puede existir una pequeña variación por el proceso de confección. Compara estas medidas con una camiseta que te quede como deseas.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>¿El precio cambia según la talla?</summary>
+        <div class="respuesta"><p>Sí. Talla S: $16,99; talla M: $22,99; talla L: $24,99. El precio que aparece en el producto cambia al seleccionar la talla.</p></div>
+      </details>
+
+      <details>
+        <summary>¿Cómo recibiré información sobre mi entrega?</summary>
+        <div class="respuesta"><p>La confirmación y las novedades del pedido se enviarán al número de WhatsApp que proporciones. Conserva tu conversación y comprobante de pago.</p></div>
+      </details>
+    </section>
+
+    <section class="bloque" id="devoluciones">
+      <span class="numero">02 — RESPALDO</span>
+      <h2>Cambios, devoluciones y defectos</h2>
+      <p class="introduccion">Queremos que recibas una prenda correcta y en buen estado.</p>
+
+      <details open>
+        <summary>¿Puedo solicitar una devolución?</summary>
+        <div class="respuesta"><p>Sí. En compras realizadas por internet puedes solicitarla dentro del plazo previsto por la normativa ecuatoriana aplicable, siempre que la naturaleza del producto lo permita y la camiseta se conserve en el mismo estado en que fue recibida.</p></div>
+      </details>
+
+      <details>
+        <summary>¿Puedo cambiar la talla?</summary>
+        <div class="respuesta"><p>Sí, sujeto a disponibilidad. La prenda debe estar sin uso, sin lavar, sin manchas, sin olores, sin alteraciones y con sus etiquetas o empaque original. Escríbenos apenas notes que necesitas otra talla.</p></div>
+      </details>
+
+      <details>
+        <summary>¿Qué hago si la prenda tiene un defecto o llegó equivocada?</summary>
+        <div class="respuesta"><p>Comunícate por WhatsApp dentro de las primeras 48 horas posteriores a la entrega. Envíanos tu nombre, la referencia del pedido y fotografías claras de la prenda y del empaque. Revisaremos el caso y, cuando corresponda, coordinaremos cambio, reparación, reposición o devolución.</p></div>
+      </details>
+
+      <details>
+        <summary>¿Quién cubre el costo del envío?</summary>
+        <div class="respuesta"><p>Si EAWEAR.EC envió una prenda equivocada o se confirma un defecto de origen, asumiremos el costo de la solución acordada. En cambios por talla o preferencia del cliente, los costos de transporte corresponden al cliente, salvo que acordemos algo distinto.</p></div>
+      </details>
+
+      <details>
+        <summary>¿Cómo se realiza un reembolso?</summary>
+        <div class="respuesta"><p>Una vez recibida e inspeccionada la prenda, confirmaremos la aprobación. El reembolso se realizará mediante transferencia a la cuenta indicada por el cliente, dentro del tiempo que se informe al aprobar el caso. Los derechos obligatorios establecidos por la ley prevalecen sobre esta política.</p></div>
+      </details>
+
+      <div class="aviso"><strong>Importante:</strong> por higiene y conservación no aceptamos prendas usadas, lavadas, perfumadas, manchadas, dañadas por el cliente o modificadas.</div>
+    </section>
+
+    <section class="bloque" id="terminos">
+      <span class="numero">03 — CONDICIONES</span>
+      <h2>Términos de servicio</h2>
+      <p class="introduccion">Al navegar por esta página o realizar un pedido, aceptas estas condiciones, sin perjuicio de los derechos que te reconoce la ley.</p>
+
+      <details open>
+        <summary>Información de productos y disponibilidad</summary>
+        <div class="respuesta"><p>Procuramos mostrar fielmente diseños, colores, medidas y precios. El color puede variar ligeramente según la pantalla. La disponibilidad se confirma por WhatsApp antes de finalizar el pedido.</p></div>
+      </details>
+
+      <details>
+        <summary>Precios, pagos y confirmación</summary>
+        <div class="respuesta"><p>Los precios están expresados en dólares de los Estados Unidos. El costo de envío y cualquier valor adicional por el servicio contraentrega se comunican antes de confirmar la compra. Un pedido queda confirmado cuando EAWEAR.EC valida disponibilidad, datos de entrega y forma de pago. Podemos solicitar un nuevo comprobante si el enviado no permite verificar la operación.</p></div>
+      </details>
+
+      <details>
+        <summary>Entregas en Ecuador</summary>
+        <div class="respuesta"><p>Enviamos a todo Ecuador por medio de Servientrega. Los plazos son estimados y pueden variar por destino, clima, feriados, restricciones del transportista o causas fuera de nuestro control. El cliente debe proporcionar nombres, teléfono y dirección correctos. La contraentrega está sujeta a disponibilidad para el destino y genera un valor adicional, informado antes de despachar el pedido.</p></div>
+      </details>
+
+      <details>
+        <summary>Uso permitido del sitio</summary>
+        <div class="respuesta"><p>Puedes usar el sitio para informarte y realizar pedidos legítimos. No está permitido intentar dañar el sitio, introducir código malicioso, hacerse pasar por otra persona, realizar pedidos fraudulentos ni utilizar el contenido de forma que vulnere derechos de EAWEAR.EC o de terceros.</p></div>
+      </details>
+
+      <details>
+        <summary>Diseños y propiedad intelectual</summary>
+        <div class="respuesta"><p>El nombre EAWEAR.EC, sus elementos gráficos, fotografías, textos y diseños propios están protegidos por las normas aplicables. No pueden copiarse, comercializarse o modificarse sin autorización, excepto cuando exista permiso del titular correspondiente.</p></div>
+      </details>
+
+      <details>
+        <summary>Contacto y ley aplicable</summary>
+        <div class="respuesta"><p>Estas condiciones se interpretan de acuerdo con las leyes de Ecuador. Para consultas o reclamos, contáctanos primero por WhatsApp al 099 686 6885. Nada de estos términos limita derechos irrenunciables de las personas consumidoras.</p></div>
+      </details>
+    </section>
+
+    <section class="bloque" id="privacidad">
+      <span class="numero">04 — TUS DATOS</span>
+      <h2>Política de privacidad</h2>
+      <p class="introduccion">EAWEAR.EC utiliza únicamente los datos necesarios para atenderte y completar tu pedido.</p>
+
+      <details open>
+        <summary>¿Qué datos podemos recibir?</summary>
+        <div class="respuesta"><p>Cuando escribes por WhatsApp o realizas un pedido, puedes proporcionarnos nombre, teléfono, ciudad, dirección o referencia de entrega, producto, talla, conversación de atención y comprobante de pago. No te solicitaremos contraseñas bancarias.</p></div>
+      </details>
+
+      <details>
+        <summary>¿Para qué usamos tus datos?</summary>
+        <div class="respuesta"><ul><li>Responder preguntas y confirmar disponibilidad.</li><li>Procesar el pedido y coordinar el pago.</li><li>Preparar, enviar y dar seguimiento a la entrega.</li><li>Gestionar cambios, devoluciones, defectos o reclamos.</li><li>Cumplir obligaciones legales y prevenir fraude.</li></ul></div>
+      </details>
+
+      <details>
+        <summary>¿Con quién se comparten?</summary>
+        <div class="respuesta"><p>Solo compartiremos la información necesaria con proveedores que intervengan en el pedido, principalmente servicios de transporte o entrega, y con autoridades cuando exista una obligación legal. No vendemos tus datos personales.</p></div>
+      </details>
+
+      <details>
+        <summary>¿Cuánto tiempo se conservan?</summary>
+        <div class="respuesta"><p>Los datos se conservan durante el tiempo necesario para atender el pedido, resolver novedades y cumplir obligaciones legales o contables. Después se eliminarán o anonimizarán cuando ya no sean necesarios, salvo que la ley exija conservarlos.</p></div>
+      </details>
+
+      <details>
+        <summary>¿Cuáles son tus derechos?</summary>
+        <div class="respuesta"><p>Puedes solicitar información, acceso, rectificación o actualización, eliminación, oposición, suspensión o limitación del tratamiento y, cuando corresponda, portabilidad. También puedes retirar un consentimiento previamente otorgado, sin afectar el tratamiento legítimo realizado antes del retiro.</p></div>
+      </details>
+
+      <details>
+        <summary>WhatsApp, enlaces y alojamiento</summary>
+        <div class="respuesta"><p>WhatsApp y cualquier servicio externo enlazado aplica sus propias condiciones y políticas. Esta página no solicita crear cuentas ni registra directamente datos de tarjetas. El proveedor que aloja el sitio puede generar registros técnicos básicos para seguridad y funcionamiento.</p></div>
+      </details>
+
+      <details>
+        <summary>¿Cómo ejerzo mis derechos o hago una consulta?</summary>
+        <div class="respuesta"><p>Escribe al WhatsApp 099 686 6885 e indica que tu solicitud está relacionada con datos personales. Podremos pedir información razonable para confirmar tu identidad antes de atenderla. Responsable: EAWEAR.EC, Macas, Ecuador.</p></div>
+      </details>
+
+      <div class="aviso"><strong>Nota:</strong> si más adelante agregamos formularios, analítica, publicidad, cuentas de usuario o pagos en línea, esta política deberá actualizarse antes de activar esas funciones.</div>
+    </section>
+
+    <section class="contacto">
+      <h2>¿Todavía tienes dudas?</h2>
+      <p>Conversemos. Te ayudamos con diseños, tallas, pedidos y entregas.</p>
+      <a class="boton-whatsapp" href="https://wa.me/593996866885?text=Hola%20EAWEAR.EC%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20tienda." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>EAWEAR.EC</strong> · Macas, Ecuador · WhatsApp: <a href="https://wa.me/593996866885">099 686 6885</a></p>
+    <p>Última actualización: 14 de agosto de 2026.</p>
+  </footer>
+</body>
+</html>
